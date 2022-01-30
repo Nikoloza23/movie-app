@@ -1,0 +1,74 @@
+1)notes-page
+note-list.css
+NoteList
+NoteListItem
+Button
+AddNoteForm 
+clasCounter
+data
+
+
+2)es Appshi
+ const [page, setPage] = useState({
+   homePage: false,
+   notesPage: false,
+   classCounter: true
+  });
+
+  const [currentPage, setCurrentPage] = useState("classCounter");
+
+  const updatePage = (pageKey) => {
+     const updateActivePage = { ...page };
+     let newCurrentPage = '';
+
+     Object.keys(updateActivePage).forEach(key => {
+       if(key === pageKey){
+         updateActivePage[pageKey] = true;
+         newCurrentPage =pageKey;
+       }
+       else{
+        updateActivePage[key] = false;
+       }
+     });
+
+    setPage(updateActivePage);
+    setCurrentPage(newCurrentPage);
+
+  };
+  
+
+  return (
+    <div className="App">
+      <Navigation  page={currentPage} setPage={updatePage} />
+      {page.homePage && <HomePage/> }
+      {page.notesPage && <NotePage/>}
+      {page.classCounter && <ClassCounter title="Class Counter Example" initialValue={10}/>}
+    </div>
+  );
+}
+ziritadad aq funqcioonirebs class-counter danarcheni ukve awyobilia da amas mivabi funqcionali <
+
+
+3)Theme failshi aris dayofili ferebi romlebic aniwebs mat taviant mnishvnelobas da
+Themshi moqceulia isni ase -
+return (
+    <div className="App">
+      <Navigation  page={currentPage} setPage={updatePage} />
+       <Theme mode={currentPage} >
+        {page.homePage && <HomePage/> }
+        {page.notesPage && <NotePage/>}
+        {page.classCounter && <ClassCounter title="Class Counter Example" initialValue={10}
+        />}
+       </Theme>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+4)error boundary aris funqcia romelic gvidebs 
+asevtqvat error rodesac chven vawvdit React araswor komponents an komponents romelshidac
+chashenebulia error boundary 
