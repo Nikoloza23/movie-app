@@ -1,10 +1,10 @@
 import './App.css';
 import HomePage from './pages/home-page'
 import NotePage from './pages/notes-page/notes-page';
-import Navigation from './components/navigation'
+import Navigation from './components/navigation/navigation'
 import {useState} from 'react'
 import ClassCounter from './pages/class-counter/class-counter';
-import Theme from './components/theme';
+import Theme from './components/theme/theme';
 
 //Here is function about this Functional
 //take all of this components data and source

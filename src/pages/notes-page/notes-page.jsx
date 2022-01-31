@@ -1,6 +1,6 @@
-import AddNoteForm from "../../components/forms/add-note-form/";
-import NoteList from "../../components/list/note-list";
-
+import AddNoteForm from "../../components/forms/add-note-form/AddNoteForm";
+import NoteList from "../../components/list/note-list/NoteList";
+import NotesProviderComponent  from '../../components/contexts/NotesProvider'
 
 /* Note Page Functional when you clicked here comes new
 item of note also you can type your description

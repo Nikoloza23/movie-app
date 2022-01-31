@@ -1,6 +1,5 @@
 import  React, {useEffect, useState} from 'react'
-/* import notesList from '../../data/note-list'*/ 
-import API_SERVICE from '../services/api';
+import API_SERVICE from  '../services/api';
 export const NotesContext = React.createContext(null);
 
 //Provaider -> store value
@@ -11,12 +10,7 @@ and does not relate to many function  because the  note-list
 file is not overloaded and does not relate to many functions*/
 function NotesProviderComponent({children}){
     const [noteList, setNoteList] = useState([]);
-
-    const loadTodoListAsync = async () => {
-        const list = await API_SERVICE.getTodoListAsync({start:60, limit: 20})
-        setNoteList(list);
-    }
-    
+   
     useEffect(() =>{
       API_SERVICE.getTodoList({ callback: setNoteList, start: 50, limit: 15 });
     }, []);
