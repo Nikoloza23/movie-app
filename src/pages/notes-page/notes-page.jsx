@@ -1,6 +1,5 @@
 import AddNoteForm from "../../components/forms/add-note-form/";
 import NoteList from "../../components/list/note-list";
-import NotesProviderComponent from '../../components/contexts/NotesProvider';
 
 
 /* Note Page Functional when you clicked here comes new
