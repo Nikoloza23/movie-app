@@ -1,43 +1,32 @@
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 /* With this feature I split the data 
 into pages so you can go over and over again */
-function Navigation({page, setPage}){
+function Navigation(props){
     return(
         <div className="row mt-5 mb-3">
          <ul className="nav nav-pills">
             <li className="nav-item">
-            <button 
-            className={`nav-link ${page === "homePage" ? "active" : ""}`}
-            onClick={() => setPage("homePage")}
-            >
+            <NavLink className="nav-link" to="/" >
             Home Page
-            </button>
+            </NavLink>
             </li>
             <li className="nav-item">
-            <button 
-            className={`nav-link ${page === 'notesPage' ? 'active' : ""}`}
-            onClick={() => setPage('notesPage')}
-            >
+            <NavLink className="nav-link" to="/notes" >
             Notes Page
-            </button>
+            </NavLink>
             </li>
             <li className="nav-item">
-            <button 
-            className={`nav-link ${page === 'classCounter' ? 'active' : ""}`}
-            onClick={() => setPage('classCounter')}
+            <NavLink className='nav-link' to="/counter" 
             >
             Class Counter
-            </button>
+            </NavLink>
             </li>
             </ul>
         </div>
     )
 };
 
-Navigation.propTypes = {
-   page: PropTypes.string.isRequired,
-   setPage: PropTypes.func.isRequired
-}
+
 
 export default Navigation;

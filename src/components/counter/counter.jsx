@@ -9,20 +9,20 @@ function Counter(){
      const [message, setMessage] = useState("");
     
      useEffect(() => {
-         console.log("ყოველთვის კომპონენტის გადახატვისას...") 
+         /* console.log(//"ყოველთვის კომპონენტის გადახატვისას...") */ 
     })
 
     useEffect(() => {
-        console.log("ერთხელ კომპონენტის დახატვის შემდეგ...")
+        /* console.log(//"ერთხელ კომპონენტის დახატვის შემდეგ..."//) */
     }, [])
 
     useEffect(() => {
-        console.log("counte-ზე დამოკიდებული...");
+        /* console.log(//"counte-ზე დამოკიდებული..."); */
         setMessage(count * 10);
     }, [count])
 
     useEffect (() => {
-        console.log("message შემეცვალა ");
+        /* console.log(//"message შემეცვალა "); */
     }, [message])
 
      const onButtonClick = (value) =>{

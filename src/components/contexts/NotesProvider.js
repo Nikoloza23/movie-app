@@ -12,7 +12,7 @@ function NotesProviderComponent({children}){
     const [noteList, setNoteList] = useState([]);
    
     useEffect(() =>{
-      API_SERVICE.getTodoList({ callback: setNoteList, start: 50, limit: 15 });
+      API_SERVICE.getTodoList({ callback: setNoteList, start: 50, limit: 9 });
     }, []);
 
     const addNewNote = (newNote) =>{

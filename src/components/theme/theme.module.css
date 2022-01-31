@@ -1,11 +1,11 @@
-.bg-homePage{
+.bgHome{
  background: #00a8ff;
 }
 
-.bg-notesPage{
+.bgNotes{
     background: #9c88ff;
 }
 
-.bg-classCounter{
+.bgCounter {
     background: #487eb0;
 }

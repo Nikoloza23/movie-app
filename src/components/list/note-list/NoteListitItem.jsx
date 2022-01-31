@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import {NotesContext} from '../../contexts/NotesProvider.js'
+import './NoteListItem.css'
 
 //take click funqtional from NotesContext
 function NoteListItem({ item }){

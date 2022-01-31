@@ -1,0 +1,8 @@
+@media (max-width: 900px){
+    .card-title{
+        font-size: 12px;
+    }
+    .btn{
+        font-size: 12px
+    }
+}
