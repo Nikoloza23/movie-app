@@ -1,4 +1,0 @@
-/* If you find unused index files do 
-not be surprised because it is written 
-so that the embedded files appear between 
-the folders and are not cluttered with each other */
