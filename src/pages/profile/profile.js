@@ -1,5 +1,5 @@
 import classNames from 'classnames';
- import { withAuthProtected } from '../../components/hoc/withAuthProtected';
+/*  import { withAuthProtected } from '../../components/hoc/withAuthProtected'; */
 /* if you default like this withAuthProtected(Profile) you wiil take warn*/ 
 import css from './profile.module.css'
 
@@ -11,4 +11,4 @@ function Profile (props){
    )
 }
 
-export default  withAuthProtected(Profile);
+export default  Profile;
