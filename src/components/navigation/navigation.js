@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import classes from './navigation.css'
 /* With this feature I split the data 
 into pages so you can go over and over again */
 
