@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 
 import './App.css';
-import HomePage from './pages/home-page';
-import NotePage from './pages/notes-page/notes-page';
-import Navigation from './components/navigation/navigation'
-import Profile from './pages/profile/profile';
+import HomePage from './src/pages/home-page';
+import NotePage from './src/pages/notes-page/notes-page';
+import Navigation from './src/components/navigation/navigation'
+import Profile from './src/pages/profile/profile';
 
-import ClassCounter from './pages/class-counter/class-counter';
-import Theme from './components/theme/theme';
+import ClassCounter from './src/pages/class-counter/class-counter';
+import Theme from './src/components/theme/theme';
 
 
 //Make routing on pages 
