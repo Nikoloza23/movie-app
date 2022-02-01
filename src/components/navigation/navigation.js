@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
-
+import classes from './navigation.css'
 /* With this feature I split the data 
 into pages so you can go over and over again */
+
 function Navigation(props){
     return(
         <div className="row mt-5 mb-3">
@@ -12,17 +13,17 @@ function Navigation(props){
             </NavLink>
         </li>
             <li className="nav-item">
-            <NavLink className="nav-link" to="/notes" >
+            <NavLink className="nav-link" to="/notes">
               Notes Page
             </NavLink>
         </li>
             <li className="nav-item">
-            <NavLink className='nav-link' to="/counter" >
+            <NavLink className='nav-link' to="/counter">
               Class Counter
             </NavLink>
         </li>
             <li className="nav-item">
-            <NavLink className='nav-link' to="/profile" >
+            <NavLink className='nav-link' to="/profile">
               Profile
             </NavLink>
         </li>

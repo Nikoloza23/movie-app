@@ -5,20 +5,25 @@ import classNames from 'classnames'
 
 import css from "./theme.module.css";
 
+//take color from theme.css.modules
 function Theme({children, mode = "bg-light"}) {
    const { pathname } = useLocation();
    const [themeMode, setThemMode] = useState(mode);
    
    useEffect(() => {
        let theme = 'bg-light';
-         if(pathname === '/'){
-           theme = css.bgHome;
-       }
-       else if ( pathname === '/notes'){
-        theme = css.bgNotes;
-       }
-       else if ( pathname === '/counter'){
-           theme = css.bgCounter;
+       switch(pathname){
+           case "/notes":
+            theme = css.bgNotes;
+        break
+        case "/counter":
+            theme = css.bgCounter;
+        break
+        case "/profile":
+            theme = css.bgProfile;
+        break
+           default:
+            theme = css.bgHome;
        }
        setThemMode(theme);
    }, [pathname])
