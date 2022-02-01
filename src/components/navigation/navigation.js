@@ -6,22 +6,26 @@ function Navigation(props){
     return(
         <div className="row mt-5 mb-3">
          <ul className="nav nav-pills">
-            <li className="nav-item">
+          <li className="nav-item">
             <NavLink className="nav-link" to="/" >
-            Home Page
+              Home Page
             </NavLink>
-            </li>
+        </li>
             <li className="nav-item">
             <NavLink className="nav-link" to="/notes" >
-            Notes Page
+              Notes Page
             </NavLink>
-            </li>
+        </li>
             <li className="nav-item">
-            <NavLink className='nav-link' to="/counter" 
-            >
-            Class Counter
+            <NavLink className='nav-link' to="/counter" >
+              Class Counter
             </NavLink>
-            </li>
+        </li>
+            <li className="nav-item">
+            <NavLink className='nav-link' to="/profile" >
+              Profile
+            </NavLink>
+        </li>
             </ul>
         </div>
     )

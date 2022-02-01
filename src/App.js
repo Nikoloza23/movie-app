@@ -1,8 +1,11 @@
+import { Routes, Route } from "react-router-dom";
+
 import './App.css';
 import HomePage from './pages/home-page';
 import NotePage from './pages/notes-page/notes-page';
 import Navigation from './components/navigation/navigation'
-import { Routes, Route } from "react-router-dom";
+import Profile from './pages/profile/profile';
+
 import ClassCounter from './pages/class-counter/class-counter';
 import Theme from './components/theme/theme';
 
@@ -15,6 +18,10 @@ function App() {
       <Theme>
       <Routes>
       <Route path="/notes"  element={<NotePage/>} />
+      </Routes>
+      
+      <Routes>
+        <Route path='/profile' element={<Profile title='Secured Profile Page'/>} />
       </Routes>
 
       <Routes>
