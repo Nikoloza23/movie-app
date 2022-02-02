@@ -25,6 +25,7 @@ function App() {
       </Theme>
     </div>
   );
+  
 }
 
 export default App;
