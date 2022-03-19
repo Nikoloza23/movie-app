@@ -1,0 +1,1 @@
+export const validate = (store) => store.validate;

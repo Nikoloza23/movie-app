@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
 
-form {
-	width: 500px;
-}
-
 .container {
+	width: 500px !important;
 	padding: 20px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
+	max-width: 500px;
 	transform: translate(-50%, -50%);
-	border: 1px solid #ccc;
 	border-radius: 10px;
 	background: white;
 	-webkit-box-shadow: 2px 1px 21px -9px rgba(0, 0, 0, 0.38);
 	-moz-box-shadow: 2px 1px 21px -9px rgba(0, 0, 0, 0.38);
 	box-shadow: 2px 1px 21px -9px rgba(0, 0, 0, 0.38);
+}
+
+.invalidInput {
+	border: 1px solid #fe3b1f;
 }
 
 input[type='text'],
@@ -25,8 +26,6 @@ input[type='password'] {
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
-	border: none;
-	background: #f7f7f7;
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 select {
@@ -34,7 +33,6 @@ select {
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
-	border: none;
 	background: #f7f7f7;
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
@@ -44,8 +42,6 @@ input[type='tel'] {
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
-	border: none;
-	background: #f7f7f7;
 }
 
 input[type='text']:focus,
@@ -75,14 +71,16 @@ button:hover {
 	opacity: 1;
 }
 
-@media screen and (max-width: 300px) {
+.errors {
+	color: red;
+	margin-top: -10px;
+}
+
+@media screen and (max-width: 700px) {
 	.signupbtn {
 		width: 100%;
 	}
-}
-
-@media (min-width: 1200px) {
 	.container {
-		max-width: 500px;
+		max-width: 370px;
 	}
 }
