@@ -1,7 +1,7 @@
 function Loading() {
     return (
         <div>
-            Niko
+            In Progress
         </div>
     )
 }
