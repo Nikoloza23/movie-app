@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './registrer.css';
@@ -26,7 +26,9 @@ function Registrer() {
 	const onFormSubmit = (data) => {
 		dispatch(ADD_FORM(data));
 
-		navigate('/main');
+		console.log(data);
+
+		navigate('/registered');
 	};
 
 	const notify = () => {
@@ -109,6 +111,9 @@ function Registrer() {
 					<button onClick={notify} className="btn">
 						Sign Up
 					</button>
+					<Link to="/registered">
+						<div className="sign_in">Sign In</div>
+					</Link>
 				</div>
 			</div>
 		</form>
