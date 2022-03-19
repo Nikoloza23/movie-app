@@ -1,27 +1,16 @@
-import { Routes, Route } from 'react-router-dom';
-
-import HomePage from '../src/pages/home-page';
-import NotePage from '../src/pages/notes-page/notes-page';
-import Navigation from '../src/components/navigation/navigation';
-import Profile from '../src/pages/profile/profile';
-
-import ClassCounter from '../src/pages/class-counter/class-counter';
-import Theme from '../src/components/theme/theme';
+import { Routes, Route  } from "react-router";
+import Registrer from "./pages/form/Registrer";
+import Loading from "./pages/loading/Loading";
 
 //Make routing on pages
 function App() {
-	return (
-		<div className="App">
-			<Navigation />
-			<Theme>
-				<Routes>
-					<Route path="/notes" element={<NotePage />} />
-					<Route path="/profile" element={<Profile title="Secured Profile Page" />} />
-					<Route path="/counter" element={<ClassCounter title="Class Counter Example" initialValue={10} />} />
-					<Route path="/" element={<HomePage />} />
-				</Routes>
-			</Theme>
-		</div>
+	return( 
+	<div className="App">
+     <Routes>
+		 <Route path="/" element={<Registrer/>} /> 
+		 <Route path="/loading" element={<Loading/>} />
+	 </Routes>
+	</div>
 	);
 }
 

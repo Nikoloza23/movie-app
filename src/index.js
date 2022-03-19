@@ -3,15 +3,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import ErrorBoundary from './components/error-boundary/error-boundary';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<ErrorBoundary>
 				<App />
-			</ErrorBoundary>
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root')
