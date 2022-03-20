@@ -1,24 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import './register.scss';
 
+
 export default function Register() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const formRef = useRef();
 	const navigate = useNavigate();
 
-	const emailRef = useRef();
-	const passwordRef = useRef();
+	const {
+		register,
+		/* formState: { errors }, */
+		handleSubmit,
+	} = useForm();
 
-	const handleStart = () => {
-		setEmail(emailRef.current.value);
+	const onFormSubmit = (data) => {
+		console.log(data);
+		navigate('/login');
 	};
-	const handleFinish = () => {
-		setPassword(passwordRef.current.value);
 
-		navigate('./login');
-	};
 	return (
 		<div className="register">
 			<div className="top">
@@ -35,21 +35,12 @@ export default function Register() {
 				<h1>Unlimited movies, TV shows, and more.</h1>
 				<h2>Watch anywhere. Cancel anytime.</h2>
 				<p>Ready to watch? Enter your email to create or restart your membership.</p>
-				{!email ? (
-					<div className="input">
-						<input type="email" placeholder="email address" ref={emailRef} />
-						<button className="registerButton" onClick={handleStart}>
-							Get Started
-						</button>
-					</div>
-				) : (
-					<form className="input">
-						<input type="password" placeholder="password" ref={passwordRef} />
-						<button className="registerButton" onClick={handleFinish}>
-							Start
-						</button>
-					</form>
-				)}
+				<form className="input" onSubmit={handleSubmit(onFormSubmit)} ref={formRef}>
+					<input type="email" placeholder="email address" {...register('email', { required: true })} />
+		
+					<input type="password" placeholder="password" {...register('password', { required: true })} />
+					<button className="registerButton">Sign Up</button>
+				</form>
 			</div>
 		</div>
 	);
