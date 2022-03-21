@@ -87,3 +87,26 @@
 	  }
 	}
   }
+
+
+  @media (max-width: 1500px){
+	  .register{
+		  display: flex;
+		  flex-direction: column;
+	  }
+	  .register .container h1{
+		  font-size: 15px;
+	  }
+	  .register .container p{
+		  font-size: 15px;
+	  }
+	  .register .container .input input{
+		 position: relative;
+		 width: 120px;
+		 margin-left: 10px;
+		 
+	  }
+	  .register .container .input{
+		  margin-left: -100px;
+	  }
+  }
