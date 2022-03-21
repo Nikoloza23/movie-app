@@ -3,7 +3,6 @@ import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import './register.scss';
 
-
 export default function Register() {
 	const formRef = useRef();
 	const navigate = useNavigate();
@@ -37,7 +36,7 @@ export default function Register() {
 				<p>Ready to watch? Enter your email to create or restart your membership.</p>
 				<form className="input" onSubmit={handleSubmit(onFormSubmit)} ref={formRef}>
 					<input type="email" placeholder="email address" {...register('email', { required: true })} />
-		
+
 					<input type="password" placeholder="password" {...register('password', { required: true })} />
 					<button className="registerButton">Sign Up</button>
 				</form>
