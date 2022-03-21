@@ -52,6 +52,13 @@
 				}
 			}
 
+			button.visible {
+				background: none;
+				position: absolute;
+				display: flex;
+				margin-left: 250px;
+			}
+
 			button {
 				height: 40px;
 				border-radius: 5px;

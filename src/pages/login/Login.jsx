@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Visibility } from '@material-ui/icons';
 import './login.scss';
 
 export default function Login() {
 	const formRef = useRef();
 	const navigate = useNavigate();
+	const [visible, setVisibility] = useState(false);
 
 	const {
 		register,
@@ -17,6 +19,11 @@ export default function Login() {
 		console.log(data);
 		navigate('/home');
 	};
+
+	const showenBtn = () => {
+		setVisibility((prevState) => !prevState);
+	};
+
 	return (
 		<div className="login">
 			<div className="top">
@@ -40,7 +47,14 @@ export default function Login() {
 						{errors.email?.type === 'required' && '* email is required'}
 						{errors.email?.type === 'email' && '*  email should include to meet the mail format '}
 					</div>
-					<input type="password" placeholder="Password" {...register('password', { required: true, minLength: 5 })} />
+					<input
+						type={visible ? 'text' : 'password'}
+						placeholder="Password"
+						{...register('password', { required: true, minLength: 5 })}
+					/>
+					<button className="visible" onClick={showenBtn} type="button">
+						<Visibility />
+					</button>
 					<div className="errors">
 						{errors.password?.type === 'required' && '*password is required'}
 						{errors.password?.type === 'password' && '*  password should include min 5 symbol '}
