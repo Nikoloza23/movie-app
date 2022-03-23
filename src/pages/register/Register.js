@@ -1,27 +1,24 @@
-import { useNavigate } from 'react-router-dom';
 import { useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { Visibility } from '@material-ui/icons';
 import './register.scss';
 
 export default function Register() {
-	const formRef = useRef();
-	const navigate = useNavigate();
 	const [state, setState] = useState(false);
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 
-	const {
-		register,
-		/* formState: { errors }, */
-		handleSubmit,
-	} = useForm();
+	const emailRef = useRef();
+	const passwordRef = useRef();
+
+	const handleStart = () => {
+		setEmail(emailRef.current.value);
+	};
+	const handleFinish = () => {
+		setPassword(passwordRef.current.value);
+	};
 
 	const toggleBtn = () => {
 		setState((prevState) => !prevState);
-	};
-
-	const onFormSubmit = (data) => {
-		console.log(data);
-		navigate('/login');
 	};
 
 	return (
@@ -37,24 +34,28 @@ export default function Register() {
 				</div>
 			</div>
 			<div className="container">
+				<>{password}</>
 				<h1>Unlimited movies, TV shows, and more.</h1>
 				<h2>Watch anywhere. Cancel anytime.</h2>
 				<p>Ready to watch? Enter your email to create or restart your membership.</p>
-				<form className="input" onSubmit={handleSubmit(onFormSubmit)} ref={formRef} id="registrer">
-					<input type="email" placeholder="email address" {...register('email', { required: true })} />
-
-					<input
-						type={state ? 'text' : 'password'}
-						placeholder="password"
-						{...register('password', { required: true })}
-					/>
-					<button className="showen" onClick={toggleBtn} type="button">
-						<Visibility />
-					</button>
-					<button className="registerButton" type="submit">
-						Sign Up
-					</button>
-				</form>
+				{!email ? (
+					<div className="input">
+						<input type="email" name="email" placeholder="email address" ref={emailRef} />
+						<button className="registerButton" onClick={handleStart}>
+							Get Started
+						</button>
+					</div>
+				) : (
+					<form className="input">
+						<input type={state ? 'text' : 'password'} name="password" placeholder="password" ref={passwordRef} />
+						<button className="showen" onClick={toggleBtn} type="button">
+							<Visibility />
+						</button>
+						<button className="registerButton" type="submit" onClick={handleFinish}>
+							Sign Up
+						</button>
+					</form>
+				)}
 			</div>
 		</div>
 	);
