@@ -1,17 +1,19 @@
 import { useRef, useState } from 'react';
-import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { toast } from 'react-toastify';
+import { Visibility } from '@material-ui/icons';
+
 
 import './register.css';
 import 'react-toastify/dist/ReactToastify.css';
-import {  Visibility, VisibilityOff } from '@material-ui/icons';
 
 toast.configure();
 function Register() {
+	const [state, setState] = useState(false);
 	const formRef = useRef();
 	const navigate = useNavigate();
-	const [state, setState] = useState(false);
 
 	const {
 		register,
@@ -20,8 +22,7 @@ function Register() {
 	} = useForm({});
 
 	const onFormSubmit = (data) => {
-		console.log(data);
-
+          console.log(data)
 		navigate('/login');
 	};
 
@@ -40,8 +41,10 @@ function Register() {
 	return (
 		<form className="form" onSubmit={handleSubmit(onFormSubmit)} ref={formRef} id="registrer">
 			<div className="logo">
-				SIGN IN
- 			</div>
+				<Link to="/login" style={{ textDecoration: 'none', color: 'white' }}>
+					SIGN IN
+				</Link>
+			</div>
 			<div className="container">
 				<h1 className="sign">Sign Up</h1>
 				<label htmlFor="first_name">
@@ -99,7 +102,7 @@ function Register() {
 					{...register('password', { required: true, minLength: 6 })}
 				/>
 				<button className="showen" onClick={toggleBtn} type="button">
-					<Visibility/>
+					<Visibility />
 				</button>
 				<div className="errors">
 					{errors.password?.type === 'required' && '* password name is required'}
@@ -121,9 +124,7 @@ function Register() {
 					{errors.phone?.type === 'pattern' && '* mobileNumber is include Geo format'}
 				</div>
 				<div className="clearfix">
-					<button onClick={notify} >
-						Sign Up
-					</button>
+					<button onClick={notify}>Sign Up</button>
 				</div>
 			</div>
 		</form>

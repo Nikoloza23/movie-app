@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import {createStore} from 'redux'
 import form from '../reducer';
 
 const store = createStore(form);
