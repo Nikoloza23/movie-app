@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
+
+form#registrer {
+	width: 100%;
+	height: 100vh;
+	background: url('https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png');
+	background-size: cover;
+	position: relative;
+}
+
+.container {
+	width: 500px !important;
+	padding: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -10px;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	background: url('https://wallpaperaccess.com/full/752715.jpg');
+}
+
+b {
+	color: aliceblue;
+}
+
+h1.sign {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: whitesmoke;
+}
+
+.invalidInput {
+	border: 1px solid #fe3b1f;
+}
+
+button.showen {
+	background: none;
+	position: absolute;
+	width: 100px;
+	left: 400px;
+	color: black;
+	top: 310px;
+}
+
+.logo {
+	position: absolute;
+	left: 50px;
+	top: 10px;
+	color: whitesmoke;
+	border: 4px solid darkred;
+	border-radius: 100px;
+	background: darkred;
+	cursor: pointer;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo:hover {
+	transform: scale(1.1);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+	width: 450px;
+	height: 13px;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	font-family: Montserrat, Arial, Helvetica, sans-serif;
+	font-style: italic;
+}
+select {
+	width: 18%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	background: #f7f7f7;
+	font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+input[type='tel'] {
+	width: 450px;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='tel']:focus,
+input[type='email']:focus,
+select:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+button {
+	background-color: darkred;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 480px;
+	opacity: 0.9;
+	font-size: 16px;
+	font-family: Montserrat, Arial, Helvetica, sans-serif;
+	border-radius: 10px;
+}
+
+button:hover {
+	opacity: 1;
+}
+
+.errors {
+	color: red;
+	margin-top: -10px;
+}
+
+.sign_in {
+	display: flex;
+	justify-content: center;
+	font-size: 12px;
+}
+
+@media screen and (max-width: 700px) {
+	.signupbtn {
+		width: 100%;
+	}
+	.container {
+		max-width: 370px;
+	}
+}
