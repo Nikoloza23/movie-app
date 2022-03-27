@@ -144,14 +144,14 @@ button:hover {
 	button {
 		width: 330px;
 	}
-	.showen{
+	.showen {
 		position: relative;
 		left: 280px;
 	}
-	.logo{
+	.logo {
 		position: absolute;
-        left: 180px;
-	   top: 530px;
-	   
+		left: 180px;
+		top: 430px;
+
 	}
 }
