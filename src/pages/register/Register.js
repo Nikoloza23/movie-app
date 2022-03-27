@@ -1,10 +1,13 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { toast } from 'react-toastify';
-import { Visibility } from '@material-ui/icons';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
+import {ADD_FORM} from '../../redux/action'
+import {validate} from '../../redux/selectors'
 
 import './register.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,6 +17,8 @@ function Register() {
 	const [state, setState] = useState(false);
 	const formRef = useRef();
 	const navigate = useNavigate();
+	const dispatch = useDispatch()
+	const validateSelectors = useSelector(validate)
 
 	const {
 		register,
@@ -22,8 +27,8 @@ function Register() {
 	} = useForm({});
 
 	const onFormSubmit = (data) => {
-          console.log(data)
-		navigate('/login');
+        dispatch(ADD_FORM(data))
+		navigate('/start');
 	};
 
 	const toggleBtn = () => {
@@ -52,6 +57,7 @@ function Register() {
 				</label>
 				<input
 					className={errors.first_name ? 'input#first_name invalidInput' : 'input#first_name'}
+					defaultValue={validateSelectors?.first_name}
 					type="text"
 					name="fname"
 					id="first_name"
@@ -67,6 +73,7 @@ function Register() {
 				</label>
 				<input
 					className={errors.last_name ? 'input#lname invalidInput' : 'input#lname'}
+					defaultValue={validateSelectors?.last_name}
 					type="text"
 					name="lname"
 					id="lname"
@@ -82,6 +89,7 @@ function Register() {
 				</label>
 				<input
 					className={errors.email ? 'input#email invalidInput' : 'input#email'}
+					defaultValue={validateSelectors?.email}
 					type="email"
 					id="email"
 					name="email"
@@ -97,12 +105,13 @@ function Register() {
 				</label>
 				<input
 					className={errors.password ? 'input#password invalidInput' : 'input#password'}
+					defaultValue={validateSelectors?.password}
 					type={state ? 'text' : 'password'}
 					placeholder="Password"
 					{...register('password', { required: true, minLength: 6 })}
 				/>
 				<button className="showen" onClick={toggleBtn} type="button">
-					<Visibility />
+				{ state ? <Visibility /> : <VisibilityOff /> }
 				</button>
 				<div className="errors">
 					{errors.password?.type === 'required' && '* password name is required'}
@@ -113,6 +122,7 @@ function Register() {
 				</label>
 				<input
 					className={errors.phone ? 'phone_name invalidInput' : 'phone_name'}
+					defaultValue={validateSelectors?.phone}
 					type="tel"
 					name="phone"
 					id="phone"

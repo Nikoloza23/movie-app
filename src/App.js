@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router';
 import Register from './pages/register/Register';
-import Login from './pages/form/Login';
+import Start from './pages/form/Start';
 import './app.css';
 
 //Make routing on pages
@@ -9,7 +9,7 @@ function App() {
 		<div className="App">
 			<Routes>
 				<Route path="/" element={<Register />} />
-				<Route path="/login" element={<Login/>} />
+				<Route path="/start" element={<Start/>} />
 			</Routes>
 		</div>
 	);
