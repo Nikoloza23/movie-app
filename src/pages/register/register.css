@@ -41,7 +41,7 @@ h1.sign {
 	width: 100px;
 	left: 400px;
 	color: black;
-    top: -74px;
+	top: -74px;
 	display: flex;
 	margin-bottom: -70px;
 }
@@ -91,7 +91,6 @@ input[type='tel'] {
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
-
 }
 
 input[type='text']:focus,
@@ -131,9 +130,28 @@ button:hover {
 	justify-content: center;
 	font-size: 12px;
 }
-/* 
-@media (min-width:500px){
-	.container{
-		width: 100px !important;
+
+@media (max-width: 800px) {
+	.container {
+		max-width: 350px;
 	}
-} */
+	input[type='text'],
+	input[type='email'],
+	input[type='password'],
+	input[type='tel'] {
+		width: 330px;
+	}
+	button {
+		width: 330px;
+	}
+	.showen{
+		position: relative;
+		left: 280px;
+	}
+	.logo{
+		position: absolute;
+        left: 180px;
+	   top: 530px;
+	   
+	}
+}

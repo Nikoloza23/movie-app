@@ -40,3 +40,21 @@
 	color: white;
 	background-color: aqua;
 }
+
+
+@media (max-width:800px){
+	.movie{
+		position: absolute;
+		left: 50px;
+		font-size: 20px;
+		color: white;
+		border: 1px solid aqua;
+		border-radius: 100px;
+		width: max-content;
+		background-color: aqua;
+	}
+	.start{
+		position: absolute;
+		left: 150px;
+	}
+}
