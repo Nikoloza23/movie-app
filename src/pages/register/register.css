@@ -37,12 +37,13 @@ h1.sign {
 
 .showen {
 	background: none;
-	position: absolute;
+	position: relative;
 	width: 100px;
 	left: 400px;
 	color: black;
-	top: 263px ;
+    top: -74px;
 	display: flex;
+	margin-bottom: -70px;
 }
 
 .logo {
@@ -68,7 +69,7 @@ input[type='text'],
 input[type='email'],
 input[type='password'] {
 	width: 450px;
-	height: 13px;
+	height: 15px;
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
@@ -86,9 +87,11 @@ select {
 
 input[type='tel'] {
 	width: 450px;
+	height: 15px;
 	padding: 15px;
 	margin: 5px 0 22px 0;
 	display: inline-block;
+
 }
 
 input[type='text']:focus,
@@ -128,4 +131,9 @@ button:hover {
 	justify-content: center;
 	font-size: 12px;
 }
-
+/* 
+@media (min-width:500px){
+	.container{
+		width: 100px !important;
+	}
+} */

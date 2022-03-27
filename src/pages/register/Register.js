@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 
-import {ADD_FORM} from '../../redux/action'
-import {validate} from '../../redux/selectors'
+import { ADD_FORM } from '../../redux/action';
+import { validate } from '../../redux/selectors';
 
 import './register.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,8 +17,8 @@ function Register() {
 	const [state, setState] = useState(false);
 	const formRef = useRef();
 	const navigate = useNavigate();
-	const dispatch = useDispatch()
-	const validateSelectors = useSelector(validate)
+	const dispatch = useDispatch();
+	const validateSelectors = useSelector(validate);
 
 	const {
 		register,
@@ -27,7 +27,8 @@ function Register() {
 	} = useForm({});
 
 	const onFormSubmit = (data) => {
-        dispatch(ADD_FORM(data))
+		dispatch(ADD_FORM(data));
+
 		navigate('/start');
 	};
 
@@ -46,7 +47,7 @@ function Register() {
 	return (
 		<form className="form" onSubmit={handleSubmit(onFormSubmit)} ref={formRef} id="registrer">
 			<div className="logo">
-				<Link to="/login" style={{ textDecoration: 'none', color: 'white' }}>
+				<Link to="/start" style={{ textDecoration: 'none', color: 'white' }}>
 					SIGN IN
 				</Link>
 			</div>
@@ -103,6 +104,7 @@ function Register() {
 				<label htmlFor="password">
 					<b>Password</b>
 				</label>
+
 				<input
 					className={errors.password ? 'input#password invalidInput' : 'input#password'}
 					defaultValue={validateSelectors?.password}
@@ -111,7 +113,7 @@ function Register() {
 					{...register('password', { required: true, minLength: 6 })}
 				/>
 				<button className="showen" onClick={toggleBtn} type="button">
-				{ state ? <Visibility /> : <VisibilityOff /> }
+					{state ? <Visibility /> : <VisibilityOff />}
 				</button>
 				<div className="errors">
 					{errors.password?.type === 'required' && '* password name is required'}
