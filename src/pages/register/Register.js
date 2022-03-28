@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { toast } from 'react-toastify';
@@ -46,11 +46,6 @@ function Register() {
 
 	return (
 		<form className="form" onSubmit={handleSubmit(onFormSubmit)} ref={formRef} id="registrer">
-			<div className="logo">
-				<Link to="/start" style={{ textDecoration: 'none', color: 'white' }}>
-					SIGN IN
-				</Link>
-			</div>
 			<div className="container">
 				<h1 className="sign">Sign Up</h1>
 				<label htmlFor="first_name">
