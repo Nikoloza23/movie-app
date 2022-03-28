@@ -20,15 +20,18 @@ form#registrer {
 	background: url('https://wallpaperaccess.com/full/752715.jpg');
 }
 
+
+
 b {
 	color: aliceblue;
 }
 
-h1.sign {
+.sign {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: whitesmoke;
+	margin-bottom: -15px;
 }
 
 .invalidInput {
@@ -39,9 +42,9 @@ h1.sign {
 	background: none;
 	position: relative;
 	width: 100px;
-	left: 400px;
+	left: 425px;
 	color: black;
-	top: -74px;
+	top: -80px;
 	display: flex;
 	margin-bottom: -70px;
 }
@@ -104,6 +107,7 @@ button:hover {
 .errors {
 	color: red;
 	margin-top: -10px;
+	margin-bottom: -10px;
 }
 
 .sign_in {
