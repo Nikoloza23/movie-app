@@ -17,6 +17,7 @@ form#registrer {
 	margin-top: -10px;
 	transform: translate(-50%, -50%);
 	border-radius: 10px;
+	border: 1px solid whitesmoke;
 	background: url('https://wallpaperaccess.com/full/752715.jpg');
 }
 
