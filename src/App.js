@@ -2,14 +2,16 @@ import { Routes, Route } from 'react-router';
 import Register from './pages/register/Register';
 import Start from './pages/form/Start';
 import './app.css';
+import SoundBar from './components/SoundBar';
 
 //Make routing on pages
 function App() {
 	return (
 		<div className="App">
+			<SoundBar />
 			<Routes>
 				<Route path="/" element={<Register />} />
-				<Route path="/start" element={<Start/>} />
+				<Route path="/start" element={<Start />} />
 			</Routes>
 		</div>
 	);

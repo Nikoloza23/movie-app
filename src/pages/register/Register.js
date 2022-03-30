@@ -22,7 +22,7 @@ function Register() {
 
 	const {
 		register,
-		formState: { errors, isValid },
+		formState: { errors, isValid},
 		handleSubmit,
 	} = useForm({});
 

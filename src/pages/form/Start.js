@@ -4,8 +4,8 @@ import StarfieldAnimation from 'react-starfield-animation';
 function Start() {
 	return (
 		<section>
-		 <div className="start">Let's Start</div>
-		 <StarfieldAnimation
+			<div className="start">Let's Start</div>
+			<StarfieldAnimation
 				style={{
 					position: 'absolute',
 					width: '100%',
@@ -34,7 +34,6 @@ function Start() {
 				<span style={{ '--i': '19' }}></span>
 				<span style={{ '--i': '20' }}></span>
 			</div>
-			
 		</section>
 	);
 }
