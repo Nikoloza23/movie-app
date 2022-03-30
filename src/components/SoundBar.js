@@ -37,6 +37,8 @@ const Box = styled.div`
 	z-index: 10;
 	top: 1.5rem;
 	left: 3rem;
+
+	
 `;
 
 const play = keyframes`
@@ -62,4 +64,25 @@ const Line = styled.span`
 	margin: 0 0.1rem;
 	color: whiteSmoke;
 	background: black;
+
+	&:nth-child(1) {
+		animation-delay: 0.2s;
+	}
+
+	&:nth-child(2) {
+		animation-delay: 0.3s;
+	}
+
+	&:nth-child(3) {
+		animation-delay: 0.4s;
+	}
+
+	&:nth-child(4) {
+		animation-delay: 0.5s;
+	}
+
+	&:nth-child(5) {
+		animation-delay: 0.8s;
+	}
 `;
+

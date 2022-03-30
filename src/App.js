@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router';
+
 import Register from './pages/register/Register';
 import Start from './pages/form/Start';
-import './app.css';
 import SoundBar from './components/SoundBar';
 
+import './app.css';
 //Make routing on pages
 function App() {
 	return (
