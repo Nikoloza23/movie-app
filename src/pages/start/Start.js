@@ -4,7 +4,6 @@ import './start.css';
 function Start() {
 	return (
 		<section>
-			<div className="start">Let's Start</div>
 			<StarfieldAnimation
 				style={{
 					position: 'absolute',
@@ -12,6 +11,7 @@ function Start() {
 					height: '100%',
 				}}
 			/>
+			<div className="start">Let's Start</div>
 			<div className="loader">
 				<span style={{ '--i': '1' }}></span>
 				<span style={{ '--i': '2' }}></span>

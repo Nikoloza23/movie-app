@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import music from '../assets/C H I L L V I B E S _ Chill & aesthetic music playlist.mp3';
+import music from '../../assets/C H I L L V I B E S _ Chill & aesthetic music playlist.mp3';
 
 import styled, { keyframes } from 'styled-components';
 const SoundBar = () => {
@@ -83,3 +83,5 @@ const Line = styled.span`
 		animation-delay: 0.8s;
 	}
 `;
+
+
