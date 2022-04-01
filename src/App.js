@@ -4,11 +4,10 @@ import Register from './pages/register/Register';
 import Start from './pages/start/Start';
 import SoundBar from './components/soundbar/SoundBar';
 
-import './App.css';
 //Make routing on pages
 function App() {
 	return (
-		<div>
+		<div className="App">
 			<SoundBar />
 			<Routes>
 				<Route path="/" element={<Register />} />
