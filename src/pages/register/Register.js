@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { toast } from 'react-toastify';
@@ -22,13 +22,14 @@ function Register() {
 
 	const {
 		register,
-		formState: { errors, isValid},
+		formState: { errors, isValid },
 		handleSubmit,
 	} = useForm({});
 
 	const onFormSubmit = (data) => {
 		dispatch(ADD_FORM(data));
 
+		console.log(data);
 		navigate('/start');
 	};
 
@@ -131,7 +132,12 @@ function Register() {
 					{errors.phone?.type === 'pattern' && '* mobileNumber is include Geo format'}
 				</div>
 				<div className="clearfix">
-					<button onClick={notify}>Sign Up</button>
+					<button className="sign_up" onClick={notify}>
+						Sign Up
+					</button>
+					<Link to="/submited">
+						<div className="submited">Submited Applications</div>
+					</Link>
 				</div>
 			</div>
 		</form>

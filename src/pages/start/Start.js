@@ -1,7 +1,16 @@
+import { UPLOAD_DATA } from '../../redux/action';
+import { useDispatch } from 'react-redux';
+
 import StarfieldAnimation from 'react-starfield-animation';
 
 import './start.css';
 function Start() {
+	const dispatch = useDispatch();
+
+	const onSubmitClick = () => {
+		dispatch(UPLOAD_DATA());
+		console.log(UPLOAD_DATA);
+	};
 	return (
 		<section>
 			<StarfieldAnimation
@@ -12,7 +21,7 @@ function Start() {
 				}}
 			/>
 			<div className="start">Let's Start</div>
-			<div className="loader">
+			<div className="loader" onClick={onSubmitClick}>
 				<span style={{ '--i': '1' }}></span>
 				<span style={{ '--i': '2' }}></span>
 				<span style={{ '--i': '3' }}></span>
