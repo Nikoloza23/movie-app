@@ -31,18 +31,20 @@ function Submited() {
 								className="submited_applications"
 								style={clickedData === index ? {} : { display: 'none' }}
 							>
-									<div className="list">
-										<b className="submited_b">First Name</b>
-										<p className="choosen" >{el.first_name ? el.first_name : ''}</p>
-										<b className="submited_b">Lasta Name</b>
-										<p className="choosen">{el.last_name ? el.last_name : ''}</p>
-										<b className="submited_b">Email</b>
-										<p className="choosen">{el.email ? el.email : ''}</p>
-										<b className="submited_b">Phone</b>
-										<p className="choosen">{el.phone ? el.phone : ''}</p>
-									</div>
+								<div className="list">
+									<b className="submited_b">First Name</b>
+									<p className="choosen">{el.first_name ? el.first_name : ''}</p>
+									<b className="submited_b">Lasta Name</b>
+									<p className="choosen">{el.last_name ? el.last_name : ''}</p>
+									<b className="submited_b">Email</b>
+									<p className="choosen">{el.email ? el.email : ''}</p>
+									<b className="submited_b">Password</b>
+									<p className="choosen">{el.password ? el.password : ''}</p>
+									<b className="submited_b">Phone</b>
+									<p className="choosen">{el.phone ? el.phone : ''}</p>
 								</div>
 							</div>
+						</div>
 					);
 				})}
 		</div>

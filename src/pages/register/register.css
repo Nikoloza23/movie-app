@@ -6,6 +6,7 @@ form#registrer {
 	background: url('https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png');
 	background-size: cover;
 	position: relative;
+	overflow-y: scroll;
 }
 
 .container {
@@ -14,7 +15,7 @@ form#registrer {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin-top: -10px;
+	margin-top: 0px;
 	transform: translate(-50%, -50%);
 	border-radius: 10px;
 	border: 1px solid whitesmoke;
@@ -43,18 +44,19 @@ b {
 	width: 100px;
 	left: 425px;
 	color: black;
-	top: -80px;
+	top: -75px;
 	display: flex;
 	margin-bottom: -70px;
 }
 
 input[type='text'],
 input[type='email'],
-input[type='password'] {
+input[type='password'],
+input[type='confrimPassword'] {
 	width: 450px;
 	height: 15px;
 	padding: 15px;
-	margin: 5px 0 22px 0;
+	margin-bottom: 18px;
 	display: inline-block;
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
 	font-style: italic;
@@ -80,6 +82,7 @@ input[type='text']:focus,
 input[type='password']:focus,
 input[type='tel']:focus,
 input[type='email']:focus,
+input[type='confrimPassword']:focus,
 select:focus {
 	background-color: #ddd;
 	outline: none;
@@ -105,8 +108,9 @@ button:hover {
 
 .errors {
 	color: red;
-	margin-top: -10px;
 	margin-bottom: -5px;
+	position: relative;
+	top: -10px;
 }
 
 .submited {
@@ -130,7 +134,8 @@ button:hover {
 	input[type='text'],
 	input[type='email'],
 	input[type='password'],
-	input[type='tel'] {
+	input[type='tel'],
+	input[type='confrimPassword'] {
 		width: 300px;
 	}
 	button {

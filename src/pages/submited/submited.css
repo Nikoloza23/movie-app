@@ -4,6 +4,7 @@
 	height: 100vh;
 	background-size: cover;
 	position: relative;
+	overflow-y: scroll;
 }
 
 .selected {
@@ -45,15 +46,15 @@ b.submited_b {
 	color: black;
 	margin-top: 50px;
 	position: relative;
-	left: -120px;
+	left: -90px;
 	font-style: italic;
 }
 
-@media only screen and (max-width: 768px) {
-	.container_3 {
-		height: 100vh;
+@media (max-width: 768px) {
+	.selected {
+		margin-left: 10px;
 	}
-	button.selected {
+	.list {
 		margin-left: 10px;
 	}
 }

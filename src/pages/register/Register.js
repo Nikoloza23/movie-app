@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 function Register() {
 	const [state, setState] = useState(false);
+	const [showen, setShowen] = useState(false);
 	const formRef = useRef();
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -24,7 +25,10 @@ function Register() {
 		register,
 		formState: { errors, isValid },
 		handleSubmit,
-	} = useForm({});
+		watch,
+	} = useForm({
+		mode: 'onChange',
+	});
 
 	const onFormSubmit = (data) => {
 		dispatch(ADD_FORM(data));
@@ -36,6 +40,12 @@ function Register() {
 	const toggleBtn = () => {
 		setState((prevState) => !prevState);
 	};
+
+	const showenBtn = () => {
+		setShowen((prevState) => !prevState);
+	};
+
+	const password = watch('password');
 
 	const notify = () => {
 		if (isValid) {
@@ -59,11 +69,11 @@ function Register() {
 					name="fname"
 					id="first_name"
 					placeholder="First Name"
-					{...register('first_name', { required: true, minLength: 2 })}
+					{...register('first_name', { required: true, minLength: 4 })}
 				/>
 				<div className="errors">
 					{errors.first_name?.type === 'required' && '* first name is required'}
-					{errors.first_name?.type === 'minLength' && '*min 2 symbol'}
+					{errors.first_name?.type === 'minLength' && '*min 4 symbol'}
 				</div>
 				<label htmlFor="last_name">
 					<b>Last Name</b>
@@ -75,11 +85,11 @@ function Register() {
 					name="lname"
 					id="lname"
 					placeholder="Last Name"
-					{...register('last_name', { required: true })}
+					{...register('last_name', { required: true, minLength: 4 })}
 				/>
 				<div className="errors">
 					{errors.last_name?.type === 'required' && '* last name is required'}
-					{errors.last_name?.type === 'minLength' && '* last name should include 3 or more characters'}
+					{errors.last_name?.type === 'minLength' && '* last name should include 4  or more characters'}
 				</div>
 				<label htmlFor="email">
 					<b>Email</b>
@@ -100,7 +110,6 @@ function Register() {
 				<label htmlFor="password">
 					<b>Password</b>
 				</label>
-
 				<input
 					className={errors.password ? 'input#password invalidInput' : 'input#password'}
 					defaultValue={validateSelectors?.password}
@@ -115,6 +124,27 @@ function Register() {
 					{errors.password?.type === 'required' && '* password name is required'}
 					{errors.password?.type === 'minLength' && '* password  should include 5 or more characters'}
 				</div>
+				<label htmlFor="confrimPassword">
+					<b>Confrim Password</b>
+				</label>
+				<input
+					type={showen ? 'text' : 'password'}
+					defaultValue={validateSelectors?.confrimPassword}
+					placeholder="Confrim Password"
+					className={errors.confrimPassword ? 'input#confrimPassword invalidInput ' : 'input#confrimPassword'}
+					{...register('confrimPassword', {
+						required: true,
+						validate: (value) => value === password || 'The passwords do not match',
+					})}
+				/>
+				<button className="showen" onClick={showenBtn} type="button">
+					{showen ? <Visibility /> : <VisibilityOff />}
+				</button>
+				<div className="errors">
+					{errors.confrimPassword?.type === 'required' && '* confrimPassword  is required'}
+					{errors.confrimPassword?.type === 'validate' && '* confrimPassword  do not match password'}
+				</div>
+
 				<label htmlFor="phone">
 					<b>Phone</b>
 				</label>
