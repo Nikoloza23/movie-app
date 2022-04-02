@@ -20,6 +20,7 @@ function Submited() {
 
 	return (
 		<div className="container_3">
+			<h1 className="title">Submited Applications</h1>
 			{apiData &&
 				apiData.slice(0, 20).map((el, index) => {
 					return (
