@@ -1,29 +1,33 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Youtube from 'react-youtube';
 
 import MovieCard from '../../components/moviecards/MovieCard';
 
 import './movieList.css';
 
 function MovieList() {
-	const API_URL =
-		'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1';
+	const IMAGE_PATH = 'https://image.tmdb.org/t/p/w1280/';
+	const URL = `https://api.themoviedb.org/3`;
 	const [movies, setMovies] = useState([]);
 	const [selectedMovie, setSelectedMovie] = useState({});
 	const [searchKey, setSearchKey] = useState('');
 
-	const fetchMovies = async (searchKey) => {
+	const fetchMovies = async () => {
 		try {
 			const type = searchKey ? 'search' : 'discover';
 			const {
 				data: { results },
-			} = await axios.get(`${API_URL}/${type}/movie`, {
-				params: {
-					api_key: process.env.REACT_APP_MOVIE_API_KEY,
-					query: searchKey,
-				},
-			});
-
+			} = await axios.get(
+				`${URL}/${type}/movie?&api_key=250f1b16e72111b02a281e86ec9e23c2&${
+					searchKey ? `query=${searchKey}` : 'page=1'
+				}`,
+				{
+					params: {
+						query: searchKey,
+					},
+				}
+			);
 			setSelectedMovie(results[0]);
 			setMovies(results);
 		} catch (error) {
@@ -31,37 +35,56 @@ function MovieList() {
 		}
 	};
 
+	const fetchMovie = async (id) => {
+		const { data } = await axios.get(`${URL}/movie/${id}`, {
+			params: {
+				api_key: process.env.REACT_APP_MOVIE_API_KEY,
+			},
+		});
+
+		return data;
+	};
+
+	const selectMovie = (movie) => {
+		const data = fetchMovie(movie.id);
+		console.log('movie data', data);
+		setSelectedMovie(movie);
+	};
+
 	useEffect(() => {
 		fetchMovies();
-	}, []);
+	}, [searchKey]);
 
-	const renderMovies = () => movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
-
-	const searchMovies = (e) => {
-		e.preventDefault();
-		fetchMovies(searchKey);
-	};
+	const renderMovies = () =>
+		movies.map((movie) => <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />);
 
 	return (
 		<div className="App">
 			<header className="header">
 				<div className="header_content max_center">
 					<span>Movie Tralier App</span>
-					<form onSubmit={searchMovies}>
-						<input className="movies_searcher" type="text" onChange={(e) => setSearchKey(e.target.value)} />
-						<button className="movies" type="submit">
-							Search
-						</button>
-					</form>
+
+					<input
+						className="movies_searcher"
+						placeholder="Search!"
+						type="text"
+						onChange={(e) => setSearchKey(e.target.value)}
+					/>
 				</div>
 			</header>
-			<div className="hero">
+			<div
+				className="hero"
+				style={{
+					backgroundImage: `url('${IMAGE_PATH}${selectedMovie.backdrop_path}')`,
+				}}
+			>
 				<div className="hero_content max_center">
-					<h1>{selectedMovie.title}</h1>
-					{selectedMovie.overview ? <p> {selectedMovie.overview}</p> : null}
+					<button className="hero_button">Play Trailer</button>
+					<Youtube />
+					<h1 className="hero_title">{selectedMovie.title}</h1>
+					{selectedMovie.overview ? <p className="hero_overview"> {selectedMovie.overview}</p> : null}
 				</div>
 			</div>
-
 			<div className="container_4 max_center">{renderMovies()}</div>
 		</div>
 	);

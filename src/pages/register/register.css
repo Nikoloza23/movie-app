@@ -47,7 +47,7 @@ b {
     top: -55px;
     display: flex;
     margin-bottom: -35px;
-	border: 1px solid white; 
+	border: none; 
 	display: flex;
 	justify-content: center;
 }

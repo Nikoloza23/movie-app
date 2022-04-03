@@ -3,46 +3,77 @@ body {
 	color: white;
 }
 
-.max_center{
-    max-width: 1000px;
+.max_center {
+	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-
-.header_content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    top: 30px;
+.header_content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	top: 30px;
 }
 
 .container_4 {
-    padding: 15px;
+	padding: 15px;
 	background-color: #0f1014;
 	display: grid;
 	gap: 15px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	margin-top: 100px;
+	margin-top: 10px;
+	cursor: pointer;
 }
 
 .movie-cover {
 	width: 100%;
+	cursor: pointer;
 }
 
 .movies_searcher {
-    width: 200px;
-    height: 0px;
-    padding: 9px;
+	width: 200px;
+	height: 0px;
+	padding: 9px;
 }
 
+.movie-placeholder {
+	min-height: 359px;
+	background-color: white;
+	color: #0f1014;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-.movie-placeholder{
-    min-height: 359px;
-    background-color: white;
-    color: #0f1014;
+.hero {
+	min-height: 400px;
+	margin-top: 20px;
+	background-position: center;
+    background-size: cover;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
+
+.hero_content{
+    max-width: 70%;
+    padding-bottom: 50px;
+}
+
+
+.hero_title{
+    font-size: 72px;
+    margin-bottom: 20px;
+}
+
+.hero_button{
+    background: #0f1014;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
