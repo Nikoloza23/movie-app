@@ -13,7 +13,7 @@ function MovieList() {
 	const [selectedMovie, setSelectedMovie] = useState({});
 	const [searchKey, setSearchKey] = useState('');
 
-	const fetchMovies = async () => {
+	/* 	const fetchMovies = async () => {
 		try {
 			const type = searchKey ? 'search' : 'discover';
 			const {
@@ -33,7 +33,7 @@ function MovieList() {
 		} catch (error) {
 			console.log(error);
 		}
-	};
+	}; */
 
 	const fetchMovie = async (id) => {
 		const { data } = await axios.get(`${URL}/movie/${id}`, {
@@ -52,8 +52,34 @@ function MovieList() {
 	};
 
 	useEffect(() => {
-		fetchMovies();
-	}, [searchKey]);
+		const timeout = setTimeout(() => {
+		  const fetchMovies = async () => {
+			try {
+			  const type = searchKey ? 'search' : 'discover';
+			  const {
+				data: { results },
+			  } = await axios.get(
+				`${URL}/${type}/movie?&api_key=250f1b16e72111b02a281e86ec9e23c2&${
+				  searchKey ? `query=${searchKey}` : 'page=1'
+				}`,
+				{
+				  params: {
+					query: searchKey,
+				  },
+				}
+			  );
+			  setSelectedMovie(results[0]);
+			  setMovies(results);
+			} catch (error) {
+			  console.log(error);
+			}
+		  };
+	  
+		  fetchMovies();
+		}, 100)
+	  
+		return () => clearTimeout(timeout)
+	  }, [searchKey, URL]);
 
 	const renderMovies = () =>
 		movies.map((movie) => <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />);
