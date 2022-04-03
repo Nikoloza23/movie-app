@@ -1,0 +1,48 @@
+body {
+	background-color: #090a0e;
+	color: white;
+}
+
+.max_center{
+    max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.header_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 30px;
+}
+
+.container_4 {
+    padding: 15px;
+	background-color: #0f1014;
+	display: grid;
+	gap: 15px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin-top: 100px;
+}
+
+.movie-cover {
+	width: 100%;
+}
+
+.movies_searcher {
+    width: 200px;
+    height: 0px;
+    padding: 9px;
+}
+
+
+.movie-placeholder{
+    min-height: 359px;
+    background-color: white;
+    color: #0f1014;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

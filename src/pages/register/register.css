@@ -39,20 +39,20 @@ b {
 }
 
 .showen {
-	background: none;
-	position: relative;
-	width: 100px;
-	left: 425px;
-	color: black;
-	top: -75px;
+    background: none;
+    position: relative;
+    width: 10px;
+    left: 435px;
+    color: black;
+    top: -55px;
+    display: flex;
+    margin-bottom: -35px;
+	border: 1px solid white; 
 	display: flex;
-	margin-bottom: -70px;
+	justify-content: center;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='confrimPassword'] {
+input{
 	width: 450px;
 	height: 15px;
 	padding: 15px;
@@ -88,7 +88,7 @@ select:focus {
 	outline: none;
 }
 
-button {
+.sign_up {
 	background-color: darkred;
 	color: white;
 	padding: 14px 20px;
@@ -102,7 +102,7 @@ button {
 	border-radius: 10px;
 }
 
-button:hover {
+.sign_up:hover {
 	opacity: 1;
 }
 
