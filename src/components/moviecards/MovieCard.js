@@ -2,6 +2,7 @@ import React from 'react';
 
 const MovieCard = ({ movie, selectMovie }) => {
 	const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500';
+	console.log(movie)
 	return (
 		<div className='movie_card' onClick={() => selectMovie(movie)}>
 			{movie.poster_path ? (

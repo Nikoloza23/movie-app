@@ -1,6 +1,7 @@
 body {
 	background-color: #090a0e;
 	color: white;
+	overflow-x: hidden;
 }
 
 .max_center {
@@ -75,5 +76,19 @@ body {
     margin-bottom: 20px;
     padding: 10px 15px;
     cursor: pointer;
+	position: relative;
 }
 
+.movie_video{
+	width: 100%;
+	height: 460px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.close_trailer{
+	position: relative;
+}
