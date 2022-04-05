@@ -104,7 +104,7 @@ function MovieList() {
 						className="movie_video"
 						src={`https://www.youtube.com/embed/${movieTrailer}`}
 						title="video"
-						style={playTrailer === 1 ? {} : { display: 'none' }}
+						style={playTrailer === 1 ? {} : { display: 'none'}}
 					></iframe>
 					<button className="hero_button" onClick={() => clickedOnDataVideo(1)}>
 						{playTrailer  ? <div className="close_trailer">Close Trailer</div> : 'Play Trailer'}
