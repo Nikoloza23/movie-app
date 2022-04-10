@@ -23,7 +23,7 @@ function Start() {
 				}}
 			/>
 			<div className="start">Let's Start</div>
-			<Link to="/movies">
+			<Link to="/main">
 				<div className="loader" onClick={onSubmitClick}>
 					<span style={{ '--i': '1' }}></span>
 					<span style={{ '--i': '2' }}></span>

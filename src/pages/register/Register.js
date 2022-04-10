@@ -9,7 +9,7 @@ import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { ADD_FORM } from '../../redux/action';
 import { validate } from '../../redux/selectors';
 
-import './register.css';
+import './register.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();

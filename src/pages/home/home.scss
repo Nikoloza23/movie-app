@@ -1,0 +1,35 @@
+.home {
+	background-color: var(--main-color);
+	overflow: hidden;
+
+	.searcher_type {
+		display: flex;
+		top: 0;
+		position: relative;
+	}
+
+	.listTitle {
+		color: white;
+		position: relative;
+		font-size: 30px;
+		font-family: Montserrat;
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+	}
+
+	.searcher {
+		position: relative;
+		left: 500px;
+		border-radius: 10px;
+		padding: 10px;
+		width: max-content;
+		cursor: pointer;
+		color: var(--main-color);
+	}
+	.icon_searcher {
+		position: absolute;
+		left: 650px;
+		margin-top: 10px;
+	}
+}
