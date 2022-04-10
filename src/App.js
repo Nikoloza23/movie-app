@@ -12,7 +12,7 @@ import SoundBar from './components/soundbar/SoundBar';
 
 function App() {
 	return (
-		<div className="App">
+		<div >
 			<SoundBar />
 			<Routes>
 				<Route path="/" element={<Register />} />

@@ -14,7 +14,7 @@ function Start() {
 		console.log(UPLOAD_DATA);
 	};
 	return (
-		<section>
+		<section className="startet_section">
 			<StarfieldAnimation
 				style={{
 					position: 'absolute',
@@ -22,7 +22,7 @@ function Start() {
 					height: '100%',
 				}}
 			/>
-			<div className="start">Let's Start</div>
+			<div className="starter_title">Let's Start</div>
 			<Link to="/main">
 				<div className="loader" onClick={onSubmitClick}>
 					<span style={{ '--i': '1' }}></span>

@@ -57,7 +57,7 @@ function Register() {
 
 	return (
 		<form className="form" onSubmit={handleSubmit(onFormSubmit)} ref={formRef} id="registrer">
-			<div className="container">
+			<div className="container_form">
 				<h1 className="sign">Sign Up</h1>
 				<label htmlFor="first_name">
 					<b>First Name</b>

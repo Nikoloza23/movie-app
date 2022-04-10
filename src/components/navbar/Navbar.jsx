@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 import { Notifications, ArrowDropDown } from '@material-ui/icons';
 import './navbar.scss';
@@ -17,7 +18,9 @@ function Navbar() {
 					<span>Homepage</span>
 					<span> Movies</span>
 					<span>Tv Series</span>
-					<span>Submited Applications</span>
+					<Link to="/submited" style={{textDecoration:"none", color:"white"}}>
+						<span>Submited Applications</span>
+					</Link>
 				</div>
 				<div className="right">
 					<Notifications className="icon" />

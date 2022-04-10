@@ -1,4 +1,4 @@
-/* section {
+.startet_section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -7,7 +7,7 @@
 	animation: animateBg 10s linear infinite;
 }
 
-.start {
+.starter_title {
 	font-size: 50px;
 	position: absolute;
 	display: flex;
@@ -20,7 +20,7 @@
 	font-style: italic;
 }
 
-.start:hover {
+.starter_title:hover {
 	transform: scale(1.1);
 }
 
@@ -78,4 +78,3 @@
 		transform: scale(0);
 	}
 }
- */
