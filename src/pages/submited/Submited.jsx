@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import axios from 'axios';
 
 import './submited.css';
@@ -48,6 +49,9 @@ function Submited() {
 						</div>
 					);
 				})}
+			<Link to="/main" style={{textDecoration:"none"}}>
+				<div className="submited_back">GO BACK</div>
+			</Link>
 		</div>
 	);
 }

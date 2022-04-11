@@ -114,4 +114,22 @@
 		width: 50%;
 		height: 400px;
 	}
+	.detail_similar {
+		color: white;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	.movie_list_slider {
+		position: relative;
+		top: auto;
+		padding: 0 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 1rem;
+		margin: 0 1.5rem;
+		margin-top: 1rem;
+		cursor: pointer;
+	}
 }

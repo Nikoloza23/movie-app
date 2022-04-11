@@ -28,13 +28,6 @@
 			margin: 0;
 			padding: 0;
 
-			span:hover {
-				cursor: pointer;
-				text-decoration-line: underline;
-				  text-decoration-color: red;
-
-			}
-
 			img {
 				height: 25px;
 				margin-right: 40px;
@@ -43,7 +36,12 @@
 			span {
 				margin-right: 20px;
 				cursor: pointer;
-				
+			}
+			.span:hover {
+				margin-right: 20px;
+				cursor: pointer;
+				text-decoration-line: underline;
+				text-decoration-color: red;
 			}
 		}
 

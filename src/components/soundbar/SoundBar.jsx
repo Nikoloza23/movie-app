@@ -36,7 +36,8 @@ const Box = styled.div`
 	position: fixed;
 	z-index: 10;
 	top: 1.5rem;
-	left: 3rem;
+	left: 1rem;
+	position: absolute;
 `;
 
 const play = keyframes`
@@ -83,5 +84,3 @@ const Line = styled.span`
 		animation-delay: 0.8s;
 	}
 `;
-
-

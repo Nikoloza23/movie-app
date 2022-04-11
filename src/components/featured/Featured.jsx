@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -10,20 +11,21 @@ const Featured = ({ movie }) => {
 	const [playTrailer, setPlayTrailer] = useState();
 
 	const { id } = movie;
+
 	const fetchMoviesTrailer = (id) => {
 		axios({
 			method: 'GET',
 			url: `https://api.themoviedb.org/3/movie/${id}/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US`,
 		}).then((res) => {
-			if(res.data.results.length === 0) {
-				setMovieTrailer([])
-			}else{
-			setMovieTrailer(res.data.results[0].key)
+			if (res.data.results.length === 0) {
+				setMovieTrailer([]);
+			} else {
+				setMovieTrailer(res.data.results[0].key);
 			}
-			console.log(res.data)
+			console.log(res.data);
 		});
 	};
-	
+
 	const clickedOnDataVideo = (num) => {
 		setPlayTrailer((prev) => (prev === num ? null : num));
 	};
@@ -67,9 +69,12 @@ const Featured = ({ movie }) => {
 								<span onClick={() => clickedOnDataVideo(false)}>Close</span>
 							</span>
 						) : (
-							<span onClick={() => clickedOnDataVideo(true)}>Watch Now</span>
+							<span onClick={() => clickedOnDataVideo(true)}>Watch Trailer</span>
 						)}
 					</button>
+					<Link to={`/detail/${movie.id}/movie`} style={{ textDecoration: 'none' }}>
+						<div className="play">Watch Now</div>
+					</Link>
 				</div>
 			</div>
 			<div className="featured_display">

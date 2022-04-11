@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import { Autoplay } from 'swiper';
 
@@ -8,6 +8,7 @@ import axios from 'axios';
 import 'swiper/swiper.scss';
 import './detail.scss';
 import Navbar from '../../components/navbar/Navbar';
+import ListItem from '../../components/listItem/ListItem';
 
 const Detail = () => {
 	const [data, setData] = useState([]);
@@ -45,7 +46,11 @@ const Detail = () => {
 							<div className="video_title">
 								<h2>{el.name}</h2>
 							</div>
-							<iframe className="video_2" src={`https://www.youtube.com/embed/${el.key}`} title="video"></iframe>
+							<iframe
+								className="video_2"
+								src={`https://www.youtube.com/embed/${el.key}`}
+								title="video"
+							></iframe>
 						</div>
 					);
 				})}
@@ -53,9 +58,46 @@ const Detail = () => {
 		);
 	};
 
+	const Similar = (props) => {
+		const Similarurl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/similar?api_key=04c35731a5ee918f014970082a0088b1&language=en-US&page=1`;
+		const [similar, setSimilar] = useState([]);
+		useEffect(() => {
+			axios.get(Similarurl).then((response) => {
+				setSimilar(response.data.results);
+			});
+		}, [Similarurl]);
+
+		return (
+			<>
+				<h2 className="detail_similar">Similar</h2>
+				<div style={{ padding: '0 2rem', display: 'flex', justifyContent: 'center' }}>
+					<Swiper
+						grabCursor={true}
+						spaceBetween={0}
+						slidesPerView={4}
+						modules={[Autoplay]}
+						autoplay={{ delay: 3000 }}
+					>
+						<div className="cast_wrap">
+							{similar.map((item) => {
+								return (
+									<SwiperSlide key={item.id} className="cast_wrap_item">
+										<Link to={`/detail/${item.id}/${keyword}`} style={{ textDecoration: 'none', width: '100%'  }}>
+											<ListItem item={item} catalog={props.catalog} style={{ width: '100%' }} />
+										</Link>
+									</SwiperSlide>
+								);
+							})}
+						</div>
+					</Swiper>
+				</div>
+			</>
+		);
+	};
+
 	return (
 		<div className="detail_container">
-			<Navbar/>
+			<Navbar />
 			<div className="detail_banner" style={{ backgroundImage: `url(${bg})` }}></div>
 			<div className="detail_list">
 				<img
@@ -75,6 +117,8 @@ const Detail = () => {
 					<p>{data.overview}</p>
 				</div>
 			</div>
+			<h2 className="detail_similar">Actors</h2>
+
 			<div style={{ padding: '0 2rem', display: 'flex', justifyContent: 'center' }}>
 				<Swiper
 					modules={[Autoplay]}
@@ -106,6 +150,7 @@ const Detail = () => {
 				</Swiper>
 			</div>
 			<Videos id={id} catalog={keyword} />
+			<Similar id={id} catalog={keyword} />
 		</div>
 	);
 };

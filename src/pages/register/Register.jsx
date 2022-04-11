@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+import SoundBar from '../../components/soundbar/SoundBar';
+
 import { toast } from 'react-toastify';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 
@@ -13,7 +15,7 @@ import './register.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
-function Register() {
+const Register = () => {
 	const [state, setState] = useState(false);
 	const [showen, setShowen] = useState(false);
 	const formRef = useRef();
@@ -57,6 +59,7 @@ function Register() {
 
 	return (
 		<form className="form" onSubmit={handleSubmit(onFormSubmit)} ref={formRef} id="registrer">
+			<SoundBar />
 			<div className="container_form">
 				<h1 className="sign">Sign Up</h1>
 				<label htmlFor="first_name">
@@ -172,6 +175,6 @@ function Register() {
 			</div>
 		</form>
 	);
-}
+};
 
 export default Register;

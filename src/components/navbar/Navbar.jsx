@@ -1,25 +1,50 @@
 import { useState } from 'react';
-import {Link} from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
 
 import { Notifications, ArrowDropDown } from '@material-ui/icons';
 import './navbar.scss';
 
 function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
+	const { pathname } = useLocation();
 
 	window.onscroll = () => {
 		setIsScrolled(window.pageYOffset === 0 ? false : true);
 		return () => (window.onscroll = null);
 	};
+
+	const Routes = [
+		{
+			path: '/',
+		},
+		{
+			path: '/movies',
+		},
+		{
+			path: '/tvseries',
+		},
+		{
+			path: '/submited',
+		},
+	];
+
+	const active = Routes.findIndex((el) => el.path === pathname);
+
 	return (
 		<div className={isScrolled ? 'navbar scrolled' : 'navbar'}>
 			<div className="container">
 				<div className="left">
-					<span>Homepage</span>
-					<span> Movies</span>
-					<span>Tv Series</span>
-					<Link to="/submited" style={{textDecoration:"none", color:"white"}}>
-						<span>Submited Applications</span>
+					<Link to="/main" style={{ textDecoration: 'none', color: 'white' }}>
+						<span className={`${active ? 'span' : 'span'}`}>Homepage</span>
+					</Link>
+					<Link to="/movies" style={{ textDecoration: 'none', color: 'white' }}>
+						<span className={active ? 'span' : 'span'}> Movies</span>
+					</Link>
+					<Link to="/tvseries" style={{ textDecoration: 'none', color: 'white' }}>
+						<span className={active ? 'span' : 'span'}>Tv Series</span>
+					</Link>
+					<Link to="/submited" style={{ textDecoration: 'none', color: 'white' }}>
+						<span className={active ? 'span' : 'span'}>Submited Applications</span>
 					</Link>
 				</div>
 				<div className="right">

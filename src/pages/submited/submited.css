@@ -59,6 +59,17 @@ b.submited_b {
 	top: 30px;
 	font-size: 40px;
 }
+
+.submited_back {
+	color: black;
+	margin-top: 100px;
+	font-size: 40px;
+	background-color: powderblue;
+	width: max-content;
+	margin-left: 550px;
+	border-radius: 10px;
+	text-decoration: none;
+}
 @media (max-width: 768px) {
 	.selected {
 		margin-left: 10px;
