@@ -1,3 +1,36 @@
-.movies_section{
-    background-color: var(--main-color);
+.movies_section {
+	background-color: var(--main-color);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	position: relative;
+	cursor: pointer;
+
+	.movies_searcher {
+		width: max-content;
+		position: absolute;
+		margin-top: 100px;
+		margin-left: 500px;
+		border-radius: 100px;
+		color: darkred;
+		border: 3px solid darkred;
+		font-weight: 700;
+	}
+	.movies_container {
+		margin: 0px 90px 0px;
+		margin-top: 200px;
+
+		h1 {
+			width: max-content;
+			font-size: 13px;
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		img {
+			border-radius: 30px;
+			max-width: 100%;
+			margin-right: 10px;
+		}
+	}
 }

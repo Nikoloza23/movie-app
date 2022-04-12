@@ -35,8 +35,8 @@ const Featured = ({ movie }) => {
 			{playTrailer ? (
 				<img
 					style={{
-						filter: 'blur(8px)',
-						'-webkit-filter': 'blur(6px)',
+						filter: 'blur(10px)',
+						'-webkit-filter': 'blur(150%)',
 						backgroundPosition: 'center',
 						backgroundRepeat: 'no-repeat',
 					}}
