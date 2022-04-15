@@ -6,18 +6,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import SoundBar from '../../components/soundbar/SoundBar';
 
 import { toast } from 'react-toastify';
+import PhoneInput from 'react-phone-number-input';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 import { ADD_FORM } from '../../redux/action';
 import { validate } from '../../redux/selectors';
 
-import './register.scss';
+import './register.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
 const Register = () => {
 	const [state, setState] = useState(false);
 	const [showen, setShowen] = useState(false);
+	const [value, setValue] = useState();
 	const formRef = useRef();
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -149,21 +151,12 @@ const Register = () => {
 				</div>
 
 				<label htmlFor="phone">
-					<b>Phone</b>
+					<b className="phone_b">Phone</b>
 				</label>
-				<input
-					className={errors.phone ? 'phone_name invalidInput' : 'phone_name'}
-					defaultValue={validateSelectors?.phone}
-					type="tel"
-					name="phone"
-					id="phone"
-					placeholder="+995 5__ _ _ __"
-					{...register('phone', { required: true, pattern: /^\+[0-9]{3}[0-9]{9}/g })}
-				/>
-				<div className="errors">
-					{errors.phone?.type === 'required' && '* mobileNumber is required'}
-					{errors.phone?.type === 'pattern' && '* mobileNumber is include Geo format'}
+				<div className="phone">
+					<PhoneInput placeholder="Enter phone Number" value={value} onChange={setValue} />
 				</div>
+
 				<div className="clearfix">
 					<button className="sign_up" onClick={notify}>
 						Sign Up

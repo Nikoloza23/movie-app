@@ -39,20 +39,20 @@ b {
 }
 
 .showen {
-    background: none;
-    position: relative;
-    width: 10px;
-    left: 435px;
-    color: black;
-    top: -55px;
-    display: flex;
-    margin-bottom: -35px;
-	border: none; 
+	background: none;
+	position: relative;
+	width: 10px;
+	left: 435px;
+	color: black;
+	top: -55px;
+	display: flex;
+	margin-bottom: -35px;
+	border: none;
 	display: flex;
 	justify-content: center;
 }
 
-input{
+input {
 	width: 450px;
 	height: 15px;
 	padding: 15px;
@@ -62,20 +62,42 @@ input{
 	font-style: italic;
 }
 select {
-	width: 18%;
+	width: auto;
 	padding: 15px;
-	margin: 5px 0 22px 0;
+	position: relative;
+	top: 30px;
+	border: none;
 	display: inline-block;
-	background: #f7f7f7;
+	color: black;
+	background: white;
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
 input[type='tel'] {
-	width: 450px;
-	height: 15px;
-	padding: 15px;
-	margin: 5px 0 22px 0;
-	display: inline-block;
+    width: 450px;
+    height: 15px;
+    padding: 15px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.phone {
+	width: 10%;
+	position: relative;
+	top: -20px;
+	margin-bottom: -25px;
+}
+.PhoneInputCountryIcon {
+	position: relative;
+	left: 420px;
+	top: 50px;
+	display: flex;
+}
+
+svg.PhoneInputCountryIconImg {
+    max-width: 40px;
+	position: relative;
 }
 
 input[type='text']:focus,
@@ -146,4 +168,3 @@ select:focus {
 		left: 280px;
 	}
 }
-

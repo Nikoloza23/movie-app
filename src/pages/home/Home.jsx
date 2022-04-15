@@ -6,6 +6,7 @@ import Navbar from '../../components/navbar/Navbar';
 import List from '../../components/list/List';
 import Featured from '../../components/featured/Featured';
 
+
 import axios from 'axios';
 
 import 'swiper/swiper.scss';
@@ -66,7 +67,7 @@ const Home = () => {
 				slidesPerView={1}
 				speed={1000}
 				grabCursor={true}
-				/* autoplay={{ delay: 3000 }} */
+				autoplay={{ delay: 3000 }}
 				loop
 			>
 				{movies.slice(0, 6).map((movie) => {

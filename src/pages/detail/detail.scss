@@ -3,6 +3,17 @@
 	z-index: -2;
 	overflow-x: hidden;
 
+	.movies_movie_grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.details_movies {
+		margin-left: 50px;
+		margin-bottom: 100px;
+		margin-top: 50px;
+	}
+
 	.detail_container_wrapper {
 		display: flex;
 		justify-content: flex-start;
@@ -131,5 +142,27 @@
 		margin: 0 1.5rem;
 		margin-top: 1rem;
 		cursor: pointer;
+	}
+	button {
+		&.play {
+			background: white;
+			color: var(--main-color);
+			border: 4px solid transparent;
+			cursor: pointer;
+			box-shadow: 0 0 7px 8px #ff000038;
+			font-size: 1.3rem;
+			font-weight: 500;
+			padding: 0.5rem 1.8rem;
+			transition: box-shadow 0.5s ease;
+			border-radius: 100px;
+			width: max-content;
+			margin-top: 40px;
+			margin-left: 500px;
+		}
+
+		&.play:hover {
+			transform: scale(1.1);
+			box-shadow: 0 0 7px 8px #ff000038;
+		}
 	}
 }

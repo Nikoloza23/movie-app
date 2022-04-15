@@ -42,11 +42,15 @@ const MovieList = () => {
 			/>
 			{movieList.slice(0, 15).map((movies) => {
 				return (
-					<Link to={`/detail/${movies.id}/movie`} style={{ textDecoration: 'none', cursor: 'pointer' }} key={movies.id}>
+					<Link
+						to={`/detail/${movies.id}/movie`}
+						style={{ textDecoration: 'none', cursor: 'pointer' }}
+						key={movies.id}
+					>
 						<div className="movies_container">
 							<div className="movies_border">
 								<img src={`${IMGPATH}${movies.poster_path}`} alt="/" />
-								<h1>{movies.title}</h1>
+								<h1 >{movies.title}</h1>
 							</div>
 						</div>
 					</Link>

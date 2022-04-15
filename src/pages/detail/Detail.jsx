@@ -13,6 +13,9 @@ import ListItem from '../../components/listItem/ListItem';
 const Detail = () => {
 	const [data, setData] = useState([]);
 	const [casts, setCast] = useState([]);
+	const [playTrailer, setPlayTrailer] = useState();
+	const [movieTrailer, setMovieTrailer] = useState();
+
 	const { id } = useParams();
 	const { keyword } = useParams();
 	const url = `https://api.themoviedb.org/3/${keyword}/${id}?api_key=04c35731a5ee918f014970082a0088b1`;
@@ -28,6 +31,10 @@ const Detail = () => {
 			setCast(response.data.cast);
 		});
 	}, [id, keyword, url, url2]);
+
+	const clickedOnDataVideo = (num) => {
+		setPlayTrailer((prev) => (prev === num ? null : num));
+	};
 
 	const Videos = (props) => {
 		const videoUrl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US`;
@@ -58,6 +65,45 @@ const Detail = () => {
 		);
 	};
 
+	const Movies = (props) => {
+		const videoUrl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US`;
+		const [movies, setMovies] = useState([]);
+		useEffect(() => {
+			axios.get(videoUrl).then((response) => {
+				setMovies(response.data.results.slice(0, 3));
+			});
+		}, [videoUrl]);
+
+		return (
+			<>
+				<button className="play">
+					{movieTrailer}
+					{playTrailer ? (
+						<span onClick={() => setMovieTrailer(false)}>
+							<span onClick={() => clickedOnDataVideo(false)}>Close</span>
+						</span>
+					) : (
+						<span onClick={() => clickedOnDataVideo(true)}>Watch More</span>
+					)}
+				</button>
+				<div className="movies_movie_grid">
+					{movies.map((li) => {
+						return (
+							<div className="movies_er" key={li.id}>
+								<iframe
+									className="details_movies"
+									src={`https://www.youtube.com/embed/${li.key}`}
+									title="video"
+									style={playTrailer === true ? {} : { display: 'none' }}
+								></iframe>
+							</div>
+						);
+					})}
+				</div>
+			</>
+		);
+	};
+
 	const Similar = (props) => {
 		const Similarurl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/similar?api_key=04c35731a5ee918f014970082a0088b1&language=en-US&page=1`;
 		const [similar, setSimilar] = useState([]);
@@ -70,7 +116,7 @@ const Detail = () => {
 		return (
 			<>
 				<h2 className="detail_similar">Similar</h2>
-				<div style={{ padding: '0 2rem', display: 'flex', justifyContent: 'center' }}>
+				<div style={{ padding: '0 2rem', display: 'flex', justifyContent: 'center', width: '100%' }}>
 					<Swiper
 						grabCursor={true}
 						spaceBetween={0}
@@ -82,7 +128,7 @@ const Detail = () => {
 							{similar.map((item) => {
 								return (
 									<SwiperSlide key={item.id} className="cast_wrap_item">
-										<Link to={`/detail/${item.id}/${keyword}`} style={{ textDecoration: 'none', width: '100%'  }}>
+										<Link to={`/detail/${item.id}/${keyword}`} style={{ textDecoration: 'none' }}>
 											<ListItem item={item} catalog={props.catalog} style={{ width: '100%' }} />
 										</Link>
 									</SwiperSlide>
@@ -150,6 +196,7 @@ const Detail = () => {
 				</Swiper>
 			</div>
 			<Videos id={id} catalog={keyword} />
+			<Movies id={id} catalog={keyword} />
 			<Similar id={id} catalog={keyword} />
 		</div>
 	);

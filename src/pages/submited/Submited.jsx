@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './submited.css';
@@ -42,14 +42,12 @@ function Submited() {
 									<p className="submited_choosen">{el.email ? el.email : ''}</p>
 									<b className="submited_b">Password</b>
 									<p className="submited_choosen">{el.password ? el.password : ''}</p>
-									<b className="submited_b">Phone</b>
-									<p className="submited_choosen">{el.phone ? el.phone : ''}</p>
 								</div>
 							</div>
 						</div>
 					);
 				})}
-			<Link to="/main" style={{textDecoration:"none"}}>
+			<Link to="/main" style={{ textDecoration: 'none' }}>
 				<div className="submited_back">GO BACK</div>
 			</Link>
 		</div>
