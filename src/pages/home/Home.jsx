@@ -6,12 +6,12 @@ import Navbar from '../../components/navbar/Navbar';
 import List from '../../components/list/List';
 import Featured from '../../components/featured/Featured';
 
-
 import axios from 'axios';
 
 import 'swiper/swiper.scss';
 import './home.scss';
 
+//here i maked (filter) all of components
 const Home = () => {
 	const URL = `https://api.themoviedb.org/3`;
 	const [movies, setMovies] = useState([]);

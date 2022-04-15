@@ -48,10 +48,8 @@ const MovieList = () => {
 						key={movies.id}
 					>
 						<div className="movies_container">
-							<div className="movies_border">
-								<img src={`${IMGPATH}${movies.poster_path}`} alt="/" />
-								<h1 >{movies.title}</h1>
-							</div>
+							<img src={`${IMGPATH}${movies.poster_path}`} alt="/" />
+							<h1>{movies.title}</h1>
 						</div>
 					</Link>
 				);

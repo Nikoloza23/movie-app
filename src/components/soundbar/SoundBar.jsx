@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import music from '../../assets/C H I L L V I B E S _ Chill & aesthetic music playlist.mp3';
 
 import styled, { keyframes } from 'styled-components';
+//bruhh here you can listen music
 const SoundBar = () => {
 	const ref = useRef(null);
 	const [click, setClick] = useState(false);

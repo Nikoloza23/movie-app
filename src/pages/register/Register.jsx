@@ -15,6 +15,7 @@ import { validate } from '../../redux/selectors';
 import './register.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+//registration form
 toast.configure();
 const Register = () => {
 	const [state, setState] = useState(false);

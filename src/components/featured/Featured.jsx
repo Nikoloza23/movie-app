@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './featured.scss';
 
+//Backdrop with Swiper Animation
 const Featured = ({ movie }) => {
 	const IMGPATH = 'https://image.tmdb.org/t/p/w1280';
 

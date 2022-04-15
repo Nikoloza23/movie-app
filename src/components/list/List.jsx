@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ListItem from '../listItem/ListItem';
 import './list.scss';
 
+//here are routes onNext(onPrevious) movies
 export default function List({ data, keyword }) {
 	const [isMoved, setIsMoved] = useState(false);
 	const [slideNumber, setSliderNumber] = useState(0);

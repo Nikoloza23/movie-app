@@ -167,4 +167,7 @@ select:focus {
 		position: relative;
 		left: 280px;
 	}
+	.PhoneInputCountryIcon{
+		left: 280px;
+	}
 }

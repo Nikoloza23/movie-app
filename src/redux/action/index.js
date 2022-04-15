@@ -5,7 +5,6 @@ export const ADD_FORM = (data) => ({
 	payload: data,
 });
 
-
 export const UPLOAD_DATA = () => ({
 	type: types.UPLOAD_DATA_TYPE,
-})
+});

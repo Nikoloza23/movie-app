@@ -79,8 +79,25 @@
 		padding: 5px 10px;
 		top: 250px;
 		color: white;
+		background: darkred;
 		font-size: 30px;
 		cursor: pointer;
+	}
+	.language_2{
+		position: absolute;
+		align-items: center;
+		border: 1px solid #f60000;
+		border-radius: 30px;
+		display: flex;
+		font-size: 15px;
+		justify-content: center;
+		margin-left: 100px;
+		padding: 5px 10px;
+		top: 250px;
+		color: white;
+		font-size: 30px;
+		cursor: pointer;
+		background: darkred;
 	}
 	p {
 		color: white;

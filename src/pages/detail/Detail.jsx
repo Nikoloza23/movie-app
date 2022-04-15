@@ -10,6 +10,7 @@ import './detail.scss';
 import Navbar from '../../components/navbar/Navbar';
 import ListItem from '../../components/listItem/ListItem';
 
+//movie Details
 const Detail = () => {
 	const [data, setData] = useState([]);
 	const [casts, setCast] = useState([]);
@@ -35,6 +36,9 @@ const Detail = () => {
 	const clickedOnDataVideo = (num) => {
 		setPlayTrailer((prev) => (prev === num ? null : num));
 	};
+
+	
+
 
 	const Videos = (props) => {
 		const videoUrl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US`;
@@ -155,10 +159,16 @@ const Detail = () => {
 				/>
 				<div className="detail_container_wrapper">
 					<div className="detail_container_content">
-						<h1>{data.original_title}</h1>
+						<h1>
+							{data.original_title}
+							{data.original_name}
+						</h1>
 					</div>
 					<div className="detail_container_language">
 						<div className="language">{data.original_language}</div>
+						<div className="language_2" >
+							Add To Favourite +
+						</div>
 					</div>
 					<p>{data.overview}</p>
 				</div>

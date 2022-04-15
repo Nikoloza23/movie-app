@@ -5,8 +5,8 @@ import Start from './pages/start/Start';
 import Submited from './pages/submited/Submited';
 import Home from './pages/home/Home';
 import Detail from './pages/detail/Detail';
-import MovieList from './pages/detail/movies/MovieList'
-
+import MovieList from './pages/detail/movies/MovieList';
+import TVSeries from './pages/detail/tvSeries/TVSeries';
 import './app.scss';
 
 //Make routing on pages
@@ -19,8 +19,8 @@ function App() {
 				<Route path="/submited" element={<Submited />} />
 				<Route path="/main" element={<Home />} />
 				<Route path="/detail/:id/:keyword" element={<Detail />} />
-				<Route path="/movies" element={<MovieList/>}/>
-				<Route path="/tvseries" element={<tvSeries/>}/>
+				<Route path="/movies" element={<MovieList />} />
+				<Route path="/tvseries" element={<TVSeries />} />
 			</Routes>
 		</div>
 	);

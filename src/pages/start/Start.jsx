@@ -7,6 +7,8 @@ import SoundBar from '../../components/soundbar/SoundBar';
 
 import './start.css';
 
+//Here ara simple animations and start page 
+//where you will throwd on main page
 function Start() {
 	const dispatch = useDispatch();
 
