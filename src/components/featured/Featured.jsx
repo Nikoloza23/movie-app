@@ -9,7 +9,7 @@ const Featured = ({ movie }) => {
 	return (
 		<div className="featured">
 			{movie.backdrop_path ? (
-				<img className="backdrop" src={`${IMGPATH}${movie.backdrop_path}`} alt="/" />
+				<img className="backdrop" src={`${IMGPATH}${movie.backdrop_path}`} alt="" />
 			) : (
 				<div>No Image Found</div>
 			)}
@@ -23,7 +23,7 @@ const Featured = ({ movie }) => {
 				</div>
 			</div>
 			<div className="featured_display">
-				<img className="backdrop_path_mini" src={`${IMGPATH}${movie.poster_path}`} alt="/" />
+				{movie.poster_path ? <img className="backdrop_path_mini" src={`${IMGPATH}${movie.poster_path}`} alt="" /> : ""}
 			</div>
 		</div>
 	);

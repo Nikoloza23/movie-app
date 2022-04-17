@@ -15,17 +15,45 @@
 		border: 3px solid darkred;
 		font-weight: 700;
 	}
+	.without_image {
+		height: 300px;
+		width: 200px;
+		border-radius: 30px;
+		background: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--main-color);
+		text-decoration-line: underline;
+		text-decoration-color: white;
+	}
+	.pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		left: 400px;
+	}
+	.movie_page_numeration {
+		position: absolute;
+		color: white;
+		top: 180px;
+		left: 550px;
+		font-size: 30px;
+		margin-bottom: 10px;
+	}
 	.movies_container {
-		margin-top: 200px;
+		margin-top: 250px;
 		flex-direction: column;
-        margin-left: 80px;
+		margin-left: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		h1 {
 			width: max-content;
 			font-size: 13px;
 			color: white;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 		}
 		img {
 			border-radius: 30px;

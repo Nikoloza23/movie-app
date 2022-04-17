@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import './movieList.scss';
 import { Link } from 'react-router-dom';
 
+//More Movies
 const MovieList = () => {
 	const [movieList, setMovieList] = useState([]);
 	const [searchKey, setSearchKey] = useState('');
@@ -35,7 +36,7 @@ const MovieList = () => {
 
 	const handleChange = (event, value) => {
 		setPage(value);
-	  };
+	};
 
 	return (
 		<div className="movies_section">
@@ -47,32 +48,38 @@ const MovieList = () => {
 				placeholder="search!"
 				onChange={(e) => setSearchKey(e.target.value)}
 			/>
+
 			{movieList.slice(0, 15).map((movies) => {
 				return (
-					<Link
-						to={`/detail/${movies.id}/movie`}
-						style={{ textDecoration: 'none', cursor: 'pointer' }}
-						key={movies.id}
-					>
-						<div className="movies_container">
-							{movies.poster_path ? (
-								<img src={`${IMGPATH}${movies.poster_path}`} alt="" />
-							) : (
-								<div>No Image Found</div>
-							)}
-							<h1>{movies.title}</h1>
-						</div>
-					</Link>
+					<>
+						<h2 className="movie_page_numeration">Page:{`${page}`}</h2>
+						<Link
+							to={`/detail/${movies.id}/movie`}
+							style={{ textDecoration: 'none', cursor: 'pointer' }}
+							key={movies.id}
+						>
+							<div className="movies_container">
+								{movies.poster_path ? (
+									<img src={`${IMGPATH}${movies.poster_path}`} alt="" />
+								) : (
+									<div className="without_image">No Image Found</div>
+								)}
+								<h1>{movies.title}</h1>
+							</div>
+						</Link>
+					</>
 				);
 			})}
-			<Stack spacing={2}>
-				<Pagination
-					count={10}
-					onChange={handleChange}
-					page={page}
-					style={{ background: "white", borderRadius: "30px", margin: "1rem" }}
-				/>
-			</Stack>
+			<div className="pagination">
+				<Stack spacing={2}>
+					<Pagination
+						count={10}
+						onChange={handleChange}
+						page={page}
+						style={{ background: 'white', borderRadius: '30px', margin: '1rem' }}
+					/>
+				</Stack>
+			</div>
 		</div>
 	);
 };

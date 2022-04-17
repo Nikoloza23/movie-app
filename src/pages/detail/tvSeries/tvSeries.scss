@@ -2,7 +2,6 @@
 	background: var(--main-color);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	position: relative;
 
 	.series_searcher {
 		width: max-content;
@@ -14,23 +13,51 @@
 		border: 3px solid darkred;
 		font-weight: 700;
 	}
+	.without_image {
+		height: 300px;
+		width: 200px;
+		border-radius: 30px;
+		background: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--main-color);
+		text-decoration-line: underline;
+		text-decoration-color: white;
+	}
+	.pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		left: 400px;
+	}
+	.movie_page_numeration {
+		position: absolute;
+		color: white;
+		top: 180px;
+		left: 550px;
+		font-size: 30px;
+		margin-bottom: 10px;
+	}
 	.series_container {
 		margin-bottom: 100px;
-        padding-top: 150px;
+		padding-top: 250px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 		img {
-			width: 50%;
 			border-radius: 30px;
+			width: 200px;
 			position: relative;
-			top: 50px;
-			margin-left: 100px;
+
+			margin-right: 10px;
 		}
 		h1 {
-			margin-top: 50px;
 			width: max-content;
+			font-size: 13px;
 			color: white;
-			font-size: 15px;
-			position: absolute;
-			margin-left: 130px;
 		}
 	}
 }

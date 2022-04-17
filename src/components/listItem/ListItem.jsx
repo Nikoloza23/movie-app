@@ -11,7 +11,11 @@ const ListItem = ({ item, index }) => {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
-			<img className="hover_image" src={`${`https://image.tmdb.org/t/p/w1280` + item.poster_path}`} alt="" />
+			{item.poster_path ? (
+				<img className="hover_image" src={`${`https://image.tmdb.org/t/p/w1280` + item.poster_path}`} alt="" />
+			) : (
+				<div className="without_image">No Image Found</div>
+			)}
 
 			{isHovered && (
 				<div>

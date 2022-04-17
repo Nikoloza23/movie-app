@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import { Autoplay } from 'swiper';
 
@@ -78,11 +79,21 @@ const Home = () => {
 					);
 				})}
 			</Swiper>
-			<span className="listTitle">Treding to Watch</span>
+			<span className="listTitle">
+				Treding to Watch
+				<Link to="/movies" style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }}>
+					<span className="listTitle_2">Watch More</span>
+				</Link>
+			</span>
 			<List data={popMovie} keyword={'movie'} />
 			<span className="listTitle">Popular to Watch</span>
 			<List data={tredMovie} keyword={'movie'} />
-			<span className="listTitle">Serials</span>
+			<span className="listTitle">
+				Serials
+				<Link to="/tvseries" style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }}>
+					<span className="listTitle_3">Watch More</span>
+				</Link>
+			</span>
 			<List data={popSeries} keyword={'tv'} />
 		</div>
 	);
