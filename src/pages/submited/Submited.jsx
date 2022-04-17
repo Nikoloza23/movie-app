@@ -40,8 +40,6 @@ function Submited() {
 									<p className="submited_choosen">{el.last_name ? el.last_name : ''}</p>
 									<b className="submited_b">Email</b>
 									<p className="submited_choosen">{el.email ? el.email : ''}</p>
-									<b className="submited_b">Password</b>
-									<p className="submited_choosen">{el.password ? el.password : ''}</p>
 								</div>
 							</div>
 						</div>

@@ -3,6 +3,7 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	position: relative;
+	overflow-x: hidden;
 
 	.movies_searcher {
 		width: max-content;
@@ -15,9 +16,9 @@
 		font-weight: 700;
 	}
 	.movies_container {
-		margin: 0px 90px 0px;
 		margin-top: 200px;
-
+		flex-direction: column;
+        margin-left: 80px;
 		h1 {
 			width: max-content;
 			font-size: 13px;
@@ -28,7 +29,9 @@
 		}
 		img {
 			border-radius: 30px;
-			max-width: 100%;
+			width: 200px;
+			position: relative;
+
 			margin-right: 10px;
 		}
 	}

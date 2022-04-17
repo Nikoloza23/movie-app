@@ -9,7 +9,8 @@ import 'swiper/swiper.scss';
 import './detail.scss';
 import Navbar from '../../components/navbar/Navbar';
 import ListItem from '../../components/listItem/ListItem';
-
+import { useDispatch } from 'react-redux';
+import { ADD_MOVIE } from '../../redux/action/index';
 //movie Details
 const Detail = () => {
 	const [data, setData] = useState([]);
@@ -37,8 +38,11 @@ const Detail = () => {
 		setPlayTrailer((prev) => (prev === num ? null : num));
 	};
 
-	
-
+	const dispatch = useDispatch();
+	const addMovie = (product) => {
+		dispatch(ADD_MOVIE(product));
+		console.log(product);
+	};
 
 	const Videos = (props) => {
 		const videoUrl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US`;
@@ -166,7 +170,7 @@ const Detail = () => {
 					</div>
 					<div className="detail_container_language">
 						<div className="language">{data.original_language}</div>
-						<div className="language_2" >
+						<div className="language_2" onClick={() => addMovie(data)}>
 							Add To Favourite +
 						</div>
 					</div>
@@ -191,11 +195,16 @@ const Detail = () => {
 									return (
 										<SwiperSlide key={el.id}>
 											<div key={el.id} className="cast_wrap_item">
-												<img
-													className="cast_actors"
-													src={`${`https://image.tmdb.org/t/p/w1280` + el.profile_path}`}
-													alt=""
-												/>
+												{el.profile_path ? (
+													<img
+														className="cast_actors"
+														src={`${`https://image.tmdb.org/t/p/w1280` + el.profile_path}`}
+														alt=""
+													/>
+												) : (
+													<div className="without_image">No Image Found</div>
+												)}
+
 												<li className="actor_original_name">{el.original_name}</li>
 											</div>
 										</SwiperSlide>

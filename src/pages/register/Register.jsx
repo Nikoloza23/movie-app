@@ -156,6 +156,9 @@ const Register = () => {
 				</label>
 				<div className="phone">
 					<PhoneInput placeholder="Enter phone Number" value={value} onChange={setValue} />
+					<label htmlFor="country">
+					<b className="country">Country</b>
+				</label>
 				</div>
 
 				<div className="clearfix">

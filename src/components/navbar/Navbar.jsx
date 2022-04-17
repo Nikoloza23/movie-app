@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 
 import { Notifications, ArrowDropDown } from '@material-ui/icons';
 import './navbar.scss';
+import { useSelector } from 'react-redux';
 
 //navbar
 function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
+
+	const state = useSelector((state) => state);
 
 	window.onscroll = () => {
 		setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -29,9 +32,12 @@ function Navbar() {
 					<Link to="/submited" style={{ textDecoration: 'none', color: 'white' }}>
 						<span>Submited Applications</span>
 					</Link>
+					<Link to="/favourties" style={{ textDecoration: 'none', color: 'white' }}>
+						<span>Favourites List</span>
+					</Link>
 				</div>
 				<div className="right">
-					<Notifications className="icon" />
+					<Notifications className="icon"></Notifications>{state.length}
 					<div className="profile">
 						<ArrowDropDown className="icon" />
 						<div className="options">
