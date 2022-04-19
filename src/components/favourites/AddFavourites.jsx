@@ -2,11 +2,14 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import Navbar from '../navbar/Navbar';
 import { DEL_MOVIE } from '../../redux/action/index';
+
 import './favourites.scss';
+import { Link } from 'react-router-dom';
 
 const AddFavourites = () => {
 	const state = useSelector((state) => state);
 	const dispatch = useDispatch();
+	const IMGPATH = 'https://image.tmdb.org/t/p/w1280';
 
 	const handleClose = (item) => {
 		dispatch(DEL_MOVIE(item));
@@ -14,28 +17,28 @@ const AddFavourites = () => {
 
 	const product = (data) => {
 		return (
-			<div className="px-4 my-5 bg-light rounded-3" key={data.id}>
-				<Navbar />
-				<div className="container">
-					<button
-						onClick={() => handleClose(data)}
-						className="btn-close float-end"
-						aria-label="Close"
-					></button>
-					<div className="row justify-content-center">
-						<div className="col-md-4">
-							<img src={data.image} alt={data.title} height="200px" width="180px" />
-						</div>
-						<div className="col-md-4">
-							<h3>{data.title}</h3>
-							<p className="load fw-bold">{data.price}</p>
-						</div>
-					</div>
+			<div className="favourites_container" key={data.id}>
+				<div className="favourites_list">
+					<button onClick={() => handleClose(data)} className="favourites_delete">
+						X
+					</button>
+					<Link to={`/detail/${data.id}/movie`} style={{textDecoration:"none", display: "flex", justifyContent: "center"}}>
+						<img src={`${IMGPATH}${data.poster_path}`} alt="" className="favourties_image" />
+					</Link>
+					<h3 className="favourites_title">
+						{data.title}
+						{data.original_name}
+					</h3>
 				</div>
 			</div>
 		);
 	};
 
-	return <>{state.length !== 0 && state.map(product)}</>;
+	return (
+		<>
+			<Navbar />
+			{state.length !== 0 && state.map(product)}
+		</>
+	);
 };
 export default AddFavourites;

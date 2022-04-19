@@ -1,8 +1,8 @@
-import Favourite from './Favourite';
 import { combineReducers } from 'redux';
+import form from './index';
 
 const rootReducers = combineReducers({
-	Favourite,
+	form,
 });
 
 export default rootReducers;

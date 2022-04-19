@@ -1,0 +1,28 @@
+.favourites_container {
+	color: white;
+
+	.favourites_list {
+		position: relative;
+		top: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 1px solid darkred;
+		margin-bottom: 20px;
+		background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMVG4QptSMHRmbDArOOvPkIB7ybIq20mxsmw&usqp=CAU');
+		.favourties_image {
+			width: 50%;
+			flex-direction: column;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: center;
+		}
+		.favourites_title{
+			background: darkred;
+			border-radius: 30px;
+		}
+        
+	}
+}

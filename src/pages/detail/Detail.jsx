@@ -10,7 +10,7 @@ import './detail.scss';
 import Navbar from '../../components/navbar/Navbar';
 import ListItem from '../../components/listItem/ListItem';
 import { useDispatch } from 'react-redux';
-import { ADD_MOVIE } from '../../redux/action/index';
+import {ADD_MOVIE} from '../../redux/action'
 //movie Details
 const Detail = () => {
 	const [data, setData] = useState([]);

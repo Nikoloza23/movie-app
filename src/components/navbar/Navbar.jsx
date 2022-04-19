@@ -37,7 +37,10 @@ function Navbar() {
 					</Link>
 				</div>
 				<div className="right">
-					<Notifications className="icon"></Notifications>{state.length}
+					<Link to="/favourties" style={{ textDecoration: 'none', color:'white'}}>
+						<Notifications className="icon"></Notifications>
+						<div className="added_item">{state.length}</div>
+					</Link>
 					<div className="profile">
 						<ArrowDropDown className="icon" />
 						<div className="options">
