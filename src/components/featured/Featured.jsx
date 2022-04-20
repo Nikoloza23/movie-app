@@ -23,7 +23,11 @@ const Featured = ({ movie }) => {
 				</div>
 			</div>
 			<div className="featured_display">
-				{movie.poster_path ? <img className="backdrop_path_mini" src={`${IMGPATH}${movie.poster_path}`} alt="" /> : ""}
+				{movie.poster_path ? (
+					<img className="backdrop_path_mini" src={`${IMGPATH}${movie.poster_path}`} alt="" />
+				) : (
+					''
+				)}
 			</div>
 		</div>
 	);

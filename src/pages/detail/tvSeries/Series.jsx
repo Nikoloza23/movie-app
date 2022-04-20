@@ -53,7 +53,7 @@ const Series = () => {
 
 			{tvSeries.slice(0, 15).map((series) => {
 				return (
-					<>
+					<div key={series.id}>
 						<h2 className="movie_page_numeration" key={series.id}>
 							Page:{`${tvpage}`}
 						</h2>
@@ -61,7 +61,6 @@ const Series = () => {
 						<Link
 							to={`/detail/${series.id}/tv`}
 							style={{ textDecoration: 'none', cursor: 'pointer', color: 'white' }}
-							key={series.id}
 						>
 							<div className="series_container">
 								{series.poster_path ? (
@@ -73,7 +72,7 @@ const Series = () => {
 								<h1>{series.original_name}</h1>
 							</div>
 						</Link>
-					</>
+					</div>
 				);
 			})}
 			<div className="pagination">

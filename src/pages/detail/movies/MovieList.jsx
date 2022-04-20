@@ -51,13 +51,9 @@ const MovieList = () => {
 
 			{movieList.slice(0, 15).map((movies) => {
 				return (
-					<>
+					<div key={movies.id}>
 						<h2 className="movie_page_numeration">Page:{`${page}`}</h2>
-						<Link
-							to={`/detail/${movies.id}/movie`}
-							style={{ textDecoration: 'none', cursor: 'pointer' }}
-							key={movies.id}
-						>
+						<Link to={`/detail/${movies.id}/movie`} style={{ textDecoration: 'none', cursor: 'pointer' }}>
 							<div className="movies_container">
 								{movies.poster_path ? (
 									<img src={`${IMGPATH}${movies.poster_path}`} alt="" />
@@ -67,7 +63,7 @@ const MovieList = () => {
 								<h1>{movies.title}</h1>
 							</div>
 						</Link>
-					</>
+					</div>
 				);
 			})}
 			<div className="pagination">

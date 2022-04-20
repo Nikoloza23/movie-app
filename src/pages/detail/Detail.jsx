@@ -10,7 +10,7 @@ import './detail.scss';
 import Navbar from '../../components/navbar/Navbar';
 import ListItem from '../../components/listItem/ListItem';
 import { useDispatch } from 'react-redux';
-import {ADD_MOVIE} from '../../redux/action'
+import { ADD_MOVIE } from '../../redux/action';
 //movie Details
 const Detail = () => {
 	const [data, setData] = useState([]);
@@ -41,7 +41,6 @@ const Detail = () => {
 	const dispatch = useDispatch();
 	const addMovie = (product) => {
 		dispatch(ADD_MOVIE(product));
-		console.log(product);
 	};
 
 	const Videos = (props) => {
