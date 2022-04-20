@@ -54,7 +54,7 @@ const TVSeries = () => {
 			{tvSeries.slice(0, 15).map((series) => {
 				return (
 					<>
-						<h2 className="movie_page_numeration">Page:{`${tvpage}`}</h2>
+						<h2 className="movie_page_numeration" key={series.id}>Page:{`${tvpage}`}</h2>
 
 						<Link
 							to={`/detail/${series.id}/tv`}
