@@ -1,5 +1,6 @@
 .favourites_container {
 	color: white;
+	background: var(--main-color);
 
 	.favourites_list {
 		position: relative;
@@ -10,7 +11,10 @@
 		flex-direction: column;
 		border: 1px solid darkred;
 		margin-bottom: 20px;
+		background: var(--main-color);
+
 		background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMVG4QptSMHRmbDArOOvPkIB7ybIq20mxsmw&usqp=CAU');
+
 		.favourties_image {
 			width: 50%;
 			flex-direction: column;
@@ -18,11 +22,18 @@
 			flex-direction: row-reverse;
 			align-items: center;
 			justify-content: center;
+			background: var(--main-color);
 		}
-		.favourites_title{
+		.favourites_title {
 			background: darkred;
 			border-radius: 30px;
 		}
-        
 	}
+}
+
+.favourites {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	background: var(--main-color);
+	height: 100vh;
 }

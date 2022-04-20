@@ -19,7 +19,7 @@ const AddFavourites = () => {
 		return (
 			<div className="favourites_container" key={data.id}>
 				<div className="favourites_list">
-					<button onClick={() => handleClose(data)} className="favourites_delete">
+					<button onClick={() => handleClose(data)} className="favourites_delete" style={{position:"relative", left:"-180px"}}>
 						X
 					</button>
 					<Link to={`/detail/${data.id}/movie`} style={{textDecoration:"none", display: "flex", justifyContent: "center"}}>
@@ -35,10 +35,10 @@ const AddFavourites = () => {
 	};
 
 	return (
-		<>
+		<div className="favourites">
 			<Navbar />
 			{state.length !== 0 && state.map(product)}
-		</>
+		</div>
 	);
 };
 export default AddFavourites;

@@ -10,7 +10,11 @@
 
 	.without_image{
 		background: white;
-		height: 100%;
+		height: 280px;
+		color: black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.details_movies {

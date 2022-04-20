@@ -3,11 +3,10 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import StarfieldAnimation from 'react-starfield-animation';
-import SoundBar from '../../components/soundbar/SoundBar';
 
 import './start.css';
 
-//Here ara simple animations and start page 
+//Here ara simple animations and start page
 //where you will throwd on main page
 function Start() {
 	const dispatch = useDispatch();
@@ -18,7 +17,6 @@ function Start() {
 	};
 	return (
 		<section className="startet_section">
-			<SoundBar />
 			<StarfieldAnimation
 				style={{
 					position: 'absolute',

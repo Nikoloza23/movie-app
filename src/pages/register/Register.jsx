@@ -165,8 +165,8 @@ const Register = () => {
 					<button className="sign_up" onClick={notify}>
 						Sign Up
 					</button>
-					<Link to="/submited">
-						<div className="submited">Submited Applications</div>
+					<Link to="/main">
+						<div className="submited">Without Registration</div>
 					</Link>
 				</div>
 			</div>

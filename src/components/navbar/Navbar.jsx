@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { Notifications, ArrowDropDown } from '@material-ui/icons';
 import './navbar.scss';
-import { useSelector } from 'react-redux';
 
 //navbar
 function Navbar() {
@@ -20,32 +20,59 @@ function Navbar() {
 		<div className={isScrolled ? 'navbar scrolled' : 'navbar'}>
 			<div className="container">
 				<div className="left">
-					<Link to="/main" style={{ textDecoration: 'none', color: 'white' }}>
+					<NavLink
+						to="/main"
+						className={(span) => (span.isActive ? 'span Active' : 'Deactive')}
+						style={{ color: 'white' }}
+					>
 						<span>Homepage</span>
-					</Link>
-					<Link to="/movies" style={{ textDecoration: 'none', color: 'white' }}>
+					</NavLink>
+					<NavLink
+						to="/movies"
+						className={(span) => (span.isActive ? 'Active' : 'Deactive')}
+						style={{ color: 'white' }}
+					>
 						<span> Movies</span>
-					</Link>
-					<Link to="/tvseries" style={{ textDecoration: 'none', color: 'white' }}>
+					</NavLink>
+					<NavLink
+						to="/tvseries"
+						className={(span) => (span.isActive ? 'Active' : 'Deactive')}
+						style={{ color: 'white' }}
+					>
 						<span>Tv Series</span>
-					</Link>
-					<Link to="/submited" style={{ textDecoration: 'none', color: 'white' }}>
+					</NavLink>
+					<NavLink
+						to="/submited"
+						className={(span) => (span.isActive ? 'Active' : 'Deactive')}
+						style={{ color: 'white' }}
+					>
 						<span>Submited Applications</span>
-					</Link>
-					<Link to="/favourties" style={{ textDecoration: 'none', color: 'white' }}>
+					</NavLink>
+					<NavLink
+						to="/favourties"
+						className={(span) => (span.isActive ? 'Active' : 'Deactive')}
+						style={{ color: 'white' }}
+					>
 						<span>Favourites List</span>
-					</Link>
+					</NavLink>
 				</div>
 				<div className="right">
-					<Link to="/favourties" style={{ textDecoration: 'none', color:'white'}}>
-						<Notifications className="icon"></Notifications>
-						<div className="added_item">{state.length}</div>
-					</Link>
+					<NavLink
+						to="/favourties"
+						className={(span) => (span.isActive ? 'Active' : 'Deactive')}
+						style={{ color: 'white' }}
+					>
+						<Notifications className="icon" style={{ color: 'white' }}></Notifications>
+						<div className="added_item" style={{ color: 'white' }}>
+							{state.length}
+						</div>
+					</NavLink>
 					<div className="profile">
 						<ArrowDropDown className="icon" />
 						<div className="options">
-							<span>Settings</span>
-							<span>Logout</span>
+							<NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
+								<span>Go Back</span>
+							</NavLink>
 						</div>
 					</div>
 				</div>
