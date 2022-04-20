@@ -6,7 +6,7 @@ import Submited from './pages/submited/Submited';
 import Home from './pages/home/Home';
 import Detail from './pages/detail/Detail';
 import MovieList from './pages/detail/movies/MovieList';
-import TVSeries from './pages/detail/tvSeries/TVSeries';
+import Series from './pages/detail/tvSeries/Series';
 import AddFavourites from './components/favourites/AddFavourites';
 
 import './app.scss';
@@ -22,7 +22,7 @@ function App() {
 				<Route path="/main" element={<Home />} />
 				<Route path="/detail/:id/:keyword" element={<Detail />} />
 				<Route path="/movies" element={<MovieList />} />
-				<Route path="/tvseries" element={<TVSeries />} />
+				<Route path="/tvseries" element={<Series />} />
 				<Route path="/favourties" element={<AddFavourites />} />
 			</Routes>
 		</div>
