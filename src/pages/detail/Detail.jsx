@@ -73,18 +73,17 @@ const Detail = () => {
 	};
 
 	const Movies = (props) => {
-		const videoUrl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US`;
+		const moviesUrl = `https://api.themoviedb.org/3/${props.catalog}/${props.id}/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US`;
 		const [movies, setMovies] = useState([]);
 		useEffect(() => {
-			axios.get(videoUrl).then((response) => {
+			axios.get(moviesUrl).then((response) => {
 				setMovies(response.data.results.slice(0, 3));
 			});
-		}, [videoUrl]);
+		}, [moviesUrl]);
 
 		return (
 			<>
 				<button className="play">
-					{movieTrailer}
 					{playTrailer ? (
 						<span onClick={() => setMovieTrailer(false)}>
 							<span onClick={() => clickedOnDataVideo(false)}>Close</span>
