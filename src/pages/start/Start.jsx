@@ -1,5 +1,3 @@
-import { UPLOAD_DATA } from '../../redux/action';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import StarfieldAnimation from 'react-starfield-animation';
@@ -9,12 +7,6 @@ import './start.css';
 //Here ara simple animations and start page
 //where you will throwd on main page
 function Start() {
-	const dispatch = useDispatch();
-
-	const onSubmitClick = () => {
-		dispatch(UPLOAD_DATA());
-		console.log(UPLOAD_DATA);
-	};
 	return (
 		<section className="startet_section">
 			<StarfieldAnimation
@@ -26,7 +18,7 @@ function Start() {
 			/>
 			<div className="starter_title">Let's Start</div>
 			<Link to="/main">
-				<div className="loader" onClick={onSubmitClick}>
+				<div className="loader">
 					<span style={{ '--i': '1' }}></span>
 					<span style={{ '--i': '2' }}></span>
 					<span style={{ '--i': '3' }}></span>
