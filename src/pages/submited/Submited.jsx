@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+/* import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -34,12 +34,12 @@ function Submited() {
 								style={clickedData === index ? {} : { display: 'none' }}
 							>
 								<div className="submited_list">
-								{/* 	<b className="submited_b">First Name</b>
+									<b className="submited_b">First Name</b>
 									<p className="submited_choosen">{el.first_name ? el.first_name : ''}</p>
 									<b className="submited_b">Lasta Name</b>
 									<p className="submited_choosen">{el.last_name ? el.last_name : ''}</p>
 									<b className="submited_b">Email</b>
-									<p className="submited_choosen">{el.email ? el.email : ''}</p> */}
+									<p className="submited_choosen">{el.email ? el.email : ''}</p>
 								</div>
 							</div>
 						</div>
@@ -52,4 +52,4 @@ function Submited() {
 	);
 }
 
-export default Submited;
+export default Submited; */
