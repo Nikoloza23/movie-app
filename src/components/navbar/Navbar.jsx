@@ -42,13 +42,6 @@ function Navbar() {
 						<span>Tv Series</span>
 					</NavLink>
 					<NavLink
-						to="/submited"
-						className={(span) => (span.isActive ? 'Active' : 'Deactive')}
-						style={{ color: 'white' }}
-					>
-						<span>Submited Applications</span>
-					</NavLink>
-					<NavLink
 						to="/favourties"
 						className={(span) => (span.isActive ? 'Active' : 'Deactive')}
 						style={{ color: 'white' }}
