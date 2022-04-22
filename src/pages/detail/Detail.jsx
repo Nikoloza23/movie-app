@@ -84,6 +84,7 @@ const Detail = () => {
 		return (
 			<>
 				<button className="play">
+					{movieTrailer}
 					{playTrailer ? (
 						<span onClick={() => setMovieTrailer(false)}>
 							<span onClick={() => clickedOnDataVideo(false)}>Close</span>
