@@ -15,19 +15,19 @@ const AddFavourites = () => {
 		dispatch(DEL_MOVIE(item));
 	};
 
-	const product = (data) => {
+	const product = (product) => {
 		return (
-			<div className="favourites_container" key={data.id}>
+			<div className="favourites_container" key={product.id}>
 				<div className="favourites_list">
-					<button onClick={() => handleClose(data)} className="favourites_delete" style={{position:"relative", left:"-180px"}}>
+					<button onClick={() => handleClose(product)} className="favourites_delete" style={{position:"relative", left:"-180px"}}>
 						X
 					</button>
-					<Link to={`/detail/${data.id}/movie`} style={{textDecoration:"none", display: "flex", justifyContent: "center"}}>
-						<img src={`${IMGPATH}${data.poster_path}`} alt="" className="favourties_image" />
+					<Link to={`/detail/${product.id}/movie`} style={{textDecoration:"none", display: "flex", justifyContent: "center"}}>
+						<img src={`${IMGPATH}${product.poster_path}`} alt="" className="favourties_image" />
 					</Link>
 					<h3 className="favourites_title">
-						{data.title}
-						{data.original_name}
+						{product.title}
+						{product.original_name}
 					</h3>
 				</div>
 			</div>

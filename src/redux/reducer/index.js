@@ -1,14 +1,10 @@
-import * as types from '../actiontypes';
-
+/* import * as types from '../actiontypes';
+ */
 const cart = [];
 
 const form = (state = cart, action) => {
 	const product = action.payload;
 	switch (action.type) {
-		case types.ADD_FORM_TYPE: {
-			return { ...state, validate: action.payload };
-		}
-
 		case 'ADDMOVIE': {
 			const exist = state.find((x) => x.id === product.id);
 			if (exist) {
@@ -33,6 +29,9 @@ const form = (state = cart, action) => {
 				return state.map((x) => (x.id === product.id ? { ...x, qty: x.qty - 1 } : x));
 			}
 		}
+	/* 	case types.ADD_FORM_TYPE: {
+			return { ...state, validate: action.payload };
+		} */
 		default:
 			return state;
 	}
