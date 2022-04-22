@@ -2,18 +2,17 @@
 	background-color: var(--main-color);
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	position: relative;
 	overflow-x: hidden;
 
 	.movies_searcher {
-		width: max-content;
 		position: absolute;
 		margin-top: 100px;
-		margin-left: 500px;
 		border-radius: 100px;
 		color: darkred;
 		border: 3px solid darkred;
 		font-weight: 700;
+		width: max-content;
+	    margin-left: 600px;
 	}
 	.without_image {
 		height: 300px;
@@ -32,13 +31,13 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		left: 400px;
+		left: 500px;
 	}
 	.movie_page_numeration {
 		position: absolute;
 		color: white;
 		top: 180px;
-		left: 550px;
+		left: 650px;
 		font-size: 30px;
 		margin-bottom: 10px;
 	}
