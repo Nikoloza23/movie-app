@@ -41,12 +41,12 @@ const MovieList = () => {
 	return (
 		<div className="movies_section">
 			<Navbar />
-			<input
-				className="movies_searcher"
-				type="text"
-				placeholder="search!"
-				onChange={(e) => setSearchKey(e.target.value)}
-			/>
+				<input
+					className="movies_searcher"
+					type="text"
+					placeholder="search!"
+					onChange={(e) => setSearchKey(e.target.value)}
+				/>
 			{movieList.slice(0, 15).map((movies) => {
 				return (
 					<div key={movies.id}>

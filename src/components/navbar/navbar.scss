@@ -83,6 +83,9 @@
 				span {
 					padding: 10px;
 					cursor: pointer;
+					text-decoration-line: underline;
+					text-decoration-color: darkred;
+					width: max-content;
 				}
 
 				&:hover {

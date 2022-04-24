@@ -3,14 +3,16 @@ import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import { Autoplay } from 'swiper';
 
+import { useDispatch } from 'react-redux';
+import { ADD_MOVIE } from '../../redux/action';
+
+import Navbar from '../../components/navbar/Navbar';
+import ListItem from '../../components/listItem/ListItem';
+
 import axios from 'axios';
 
 import 'swiper/swiper.scss';
 import './detail.scss';
-import Navbar from '../../components/navbar/Navbar';
-import ListItem from '../../components/listItem/ListItem';
-import { useDispatch } from 'react-redux';
-import { ADD_MOVIE } from '../../redux/action';
 //movie Details
 const Detail = () => {
 	const [data, setData] = useState([]);

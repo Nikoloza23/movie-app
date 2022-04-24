@@ -5,15 +5,16 @@
 	overflow-x: hidden;
 
 	.movies_searcher {
+		width: max-content;
 		position: absolute;
 		margin-top: 100px;
+		margin-left: 560px;
 		border-radius: 100px;
 		color: darkred;
 		border: 3px solid darkred;
 		font-weight: 700;
-		width: max-content;
-	    margin-left: 600px;
 	}
+
 	.without_image {
 		height: 300px;
 		width: 200px;

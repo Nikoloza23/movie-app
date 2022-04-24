@@ -5,18 +5,17 @@ export const ADD_FORM = (data) => ({
 	payload: data,
 });
 
+export const ADD_MOVIE = (product) => {
+	return {
+		type: 'ADDMOVIE',
+		payload: product,
+	};
+};
 
-export const ADD_MOVIE = (product) =>{
-	return{
-		type: "ADDMOVIE",
-		payload: product
-	}
- }
- 
- //For Delete Movie From Cart
- export const DEL_MOVIE = (product) =>{
-	 return{
-		 type: "DELMOVIE",
-		 payload: product
-	 }
-  }
+//For Delete Movie From Cart
+export const DEL_MOVIE = (product) => {
+	return {
+		type: 'DELMOVIE',
+		payload: product,
+	};
+};

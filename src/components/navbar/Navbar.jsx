@@ -21,7 +21,7 @@ function Navbar() {
 			<div className="container">
 				<div className="left">
 					<NavLink
-						to="/main"
+						to="/"
 						className={(span) => (span.isActive ? 'span Active' : 'Deactive')}
 						style={{ color: 'white' }}
 					>
@@ -65,6 +65,9 @@ function Navbar() {
 						<div className="options">
 							<NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
 								<span>Go Back</span>
+							</NavLink>
+							<NavLink to="/register" style={{ textDecoration: 'none', color: 'white' }}>
+								<span>Sign Up</span>
 							</NavLink>
 						</div>
 					</div>

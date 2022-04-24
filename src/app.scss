@@ -1,5 +1,6 @@
 :root {
 	--main-color: #0b0b0b;
+	--main-size: 100%;
 }
 
 body {
@@ -27,11 +28,42 @@ body {
 	}
 	.listTitle {
 		top: 100px;
+		font-size: 10px;
+		.listTitle_2 {
+			position: absolute;
+			left: 240px;
+		}
+		.listTitle_3 {
+			position: absolute;
+			left: 240px;
+			top: -35px;
+		}
 	}
 	.listItem img {
 		top: 100px;
 	}
 	.wrapper {
 		top: 100px;
+	}
+	.movies_section {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-columns: max-content;
+	}
+	.movies_searcher {
+		position: absolute;
+		left: -450px;
+	}
+	.movie_page_numeration {
+		margin-left: -480px;
+	}
+	.tvSeries_container {
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-columns: max-content;
+		.series_searcher {
+			margin-left: 100px;
+		}
 	}
 }

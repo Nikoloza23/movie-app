@@ -57,58 +57,20 @@ input {
 	height: 15px;
 	padding: 15px;
 	margin-bottom: 18px;
-	display: inline-block;
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
 	font-style: italic;
 }
-select {
-	width: auto;
-	padding: 15px;
-	position: relative;
-	top: 80px;
-	border: none;
-	margin-bottom: 60px;
-	display: inline-block;
-	left: 120px;
-	color: black;
-	background: white;
-	font-family: Montserrat, Arial, Helvetica, sans-serif;
-}
 
 input[type='tel'] {
-    width: 450px;
-    height: 15px;
-    padding: 15px;
-    display: inline-block;
-    top: 20px;
-	position: absolute;
-    margin-left: 0px;
-	
-}
-
-.phone {
-	width: 10%;
-	position: relative;
-	top: -20px;
-	margin-bottom: 15px;
-}
-.PhoneInputCountryIcon {
-	position: relative;
-	left: 320px;
-	top: -20px;
-	display: flex;
-}
-
-.country{
-	position: absolute;
-	top: 80px;
-	color: white;
-	font-size: 28px;
-	
+	width: 450px;
+	height: 15px;
+	padding: 15px;
+	display: inline-block;
+	margin-left: 0px;
 }
 
 svg.PhoneInputCountryIconImg {
-    max-width: 40px;
+	max-width: 40px;
 	position: absolute;
 }
 
@@ -179,7 +141,7 @@ select:focus {
 		position: relative;
 		left: 280px;
 	}
-	.PhoneInputCountryIcon{
+	.PhoneInputCountryIcon {
 		left: 280px;
 	}
 }

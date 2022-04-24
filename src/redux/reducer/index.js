@@ -1,5 +1,5 @@
-/* import * as types from '../actiontypes';
- */
+import * as types from '../actiontypes';
+
 const cart = [];
 
 const form = (state = cart, action) => {
@@ -29,9 +29,11 @@ const form = (state = cart, action) => {
 				return state.map((x) => (x.id === product.id ? { ...x, qty: x.qty - 1 } : x));
 			}
 		}
-	/* 	case types.ADD_FORM_TYPE: {
+
+		case types.ADD_FORM_TYPE: {
 			return { ...state, validate: action.payload };
-		} */
+		}
+
 		default:
 			return state;
 	}

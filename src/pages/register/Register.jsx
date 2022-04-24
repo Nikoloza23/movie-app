@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import SoundBar from '../../components/soundbar/SoundBar';
 
 import { toast } from 'react-toastify';
-import PhoneInput from 'react-phone-number-input';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 import { ADD_FORM } from '../../redux/action';
@@ -20,7 +19,7 @@ toast.configure();
 const Register = () => {
 	const [state, setState] = useState(false);
 	const [showen, setShowen] = useState(false);
-	const [value, setValue] = useState();
+
 	const formRef = useRef();
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -39,7 +38,7 @@ const Register = () => {
 		dispatch(ADD_FORM(data));
 
 		console.log(data);
-		navigate('/start');
+		navigate('/thank');
 	};
 
 	const toggleBtn = () => {
@@ -154,19 +153,14 @@ const Register = () => {
 				<label htmlFor="phone">
 					<b className="phone_b">Phone</b>
 				</label>
-				<div className="phone">
-					<PhoneInput placeholder="Enter phone Number" value={value} onChange={setValue} />
-					<label htmlFor="country">
-					<b className="country">Country</b>
-				</label>
-				</div>
+				<input type="tel" placeholder="Enter phone Number" />
 
 				<div className="clearfix">
 					<button className="sign_up" onClick={notify}>
 						Sign Up
 					</button>
-					<Link to="/main">
-						<div className="submited">Without Registration</div>
+					<Link to="/">
+						<div className="submited">Without Regitration</div>
 					</Link>
 				</div>
 			</div>
