@@ -8,7 +8,7 @@
 		width: max-content;
 		position: absolute;
 		margin-top: 100px;
-		margin-left: 560px;
+		margin-left: 550px;
 		border-radius: 100px;
 		color: darkred;
 		border: 3px solid darkred;
@@ -38,17 +38,17 @@
 		position: absolute;
 		color: white;
 		top: 180px;
-		left: 620px;
+		left: 600px;
 		font-size: 30px;
 		margin-bottom: 10px;
 	}
 	.movies_container {
 		margin-top: 250px;
-		flex-direction: column;
-		margin-left: 80px;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		flex-direction: column;
 
 		h1 {
 			width: max-content;

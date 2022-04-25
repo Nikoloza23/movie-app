@@ -13,9 +13,11 @@ export const ADD_MOVIE = (product) => {
 };
 
 //For Delete Movie From Cart
-export const DEL_MOVIE = (product) => {
+export const DEL_MOVIE = (id) => {
 	return {
 		type: 'DELMOVIE',
-		payload: product,
+		payload: id,
 	};
 };
+
+export const UPLOAD_DATA = (data) => ({ type: types.UPLOAD_DATA_TYPE, payload: data });

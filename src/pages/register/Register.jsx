@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import SoundBar from '../../components/soundbar/SoundBar';
@@ -8,7 +8,7 @@ import SoundBar from '../../components/soundbar/SoundBar';
 import { toast } from 'react-toastify';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 
-import { ADD_FORM } from '../../redux/action';
+import { ADD_FORM, UPLOAD_DATA } from '../../redux/action';
 import { validate } from '../../redux/selectors';
 
 import './register.css';
@@ -33,13 +33,21 @@ const Register = () => {
 	} = useForm({
 		mode: 'onChange',
 	});
+	
 
 	const onFormSubmit = (data) => {
 		dispatch(ADD_FORM(data));
-
-		console.log(data);
+		dispatch(UPLOAD_DATA(data));
 		navigate('/thank');
 	};
+
+	const notify = () =>{
+		if (isValid) {
+			toast('Well Done');
+		} else {
+			toast.error('Upss');
+		}
+	}
 
 	const toggleBtn = () => {
 		setState((prevState) => !prevState);
@@ -50,14 +58,6 @@ const Register = () => {
 	};
 
 	const password = watch('password');
-
-	const notify = () => {
-		if (isValid) {
-			toast('Well Done');
-		} else {
-			toast.error('Upss');
-		}
-	};
 
 	return (
 		<form className="form" onSubmit={handleSubmit(onFormSubmit)} ref={formRef} id="registrer">
@@ -159,9 +159,6 @@ const Register = () => {
 					<button className="sign_up" onClick={notify}>
 						Sign Up
 					</button>
-					<Link to="/">
-						<div className="submited">Without Regitration</div>
-					</Link>
 				</div>
 			</div>
 		</form>

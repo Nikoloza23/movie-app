@@ -55,6 +55,20 @@
 				text-decoration: none;
 			}
 		}
+		.added_item_nick {
+			position: absolute;
+			right: 250px;
+			font-size: 20px;
+			
+
+			.added_items {
+				display: flex;
+				flex-direction: row;
+				.added_lastName {
+					margin-left: 10px;
+				}
+			}
+		}
 
 		.right {
 			display: flex;
