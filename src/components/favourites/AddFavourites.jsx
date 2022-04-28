@@ -2,13 +2,11 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import Navbar from '../navbar/Navbar';
 import { DEL_MOVIE } from '../../redux/action/index';
-import './favourites.scss';
 import { Link } from 'react-router-dom';
+import './favourites.scss';
 
 const AddFavourites = () => {
 	const fav = useSelector((state) => state.cart);
-
-	console.log(fav);
 
 	const dispatch = useDispatch();
 	const IMGPATH = 'https://image.tmdb.org/t/p/w1280';
@@ -18,7 +16,7 @@ const AddFavourites = () => {
 	};
 
 	return (
-		<>
+		<div className="favourites">
 			<Navbar />
 			{fav.length > 0 ? (
 				<>
@@ -55,7 +53,7 @@ const AddFavourites = () => {
 			) : (
 				''
 			)}
-		</>
+		</div>
 	);
 };
 export default AddFavourites;

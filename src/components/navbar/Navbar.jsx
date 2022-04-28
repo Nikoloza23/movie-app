@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-import { Notifications, ArrowDropDown } from '@material-ui/icons';
+import { Notifications, ArrowDropDown, PersonAddOutlined } from '@material-ui/icons';
 
 import './navbar.scss';
 
@@ -15,7 +15,7 @@ function Navbar() {
 
 	useEffect(() => {
 		axios.get(`https://62471cb24bd12c92f4fbfdc8.mockapi.io/movies`).then((result) => setApiData(result.data));
-		console.log(setApiData);
+		console.log(apiData);
 	}, [apiData]);
 
 	window.onscroll = () => {
@@ -63,17 +63,22 @@ function Navbar() {
 						style={{ color: 'white' }}
 					>
 						<div className="added_item_nick">
-							{apiData &&
-								apiData.slice(0, 1).map((data) => (
-									<div className="added_items" key={data.id}>
-										{data.first_name ? data.first_name : ''}
-										<div className="added_lastName">{data.last_name}</div>
-									</div>
-								))}
+							<NavLink to="/register" style={{ color: 'white' }}>
+								<PersonAddOutlined className="profile_adder" />
+							</NavLink>
+							<div className="added_list">
+								{apiData &&
+									apiData.slice(0, 1).map((res) => (
+										<div className="added_items" key={res.id}>
+											{res ? res.first_name : ''}
+											<div className="added_lastName">{res ? res.last_name : ''}</div>
+										</div>
+									))}
+							</div>
 						</div>
 						<Notifications className="icon" style={{ color: 'white' }}></Notifications>
 						<div className="added_item" style={{ color: 'white' }}>
-							{/* { state.cart.length} */}
+							{state.validate.length}
 						</div>
 					</NavLink>
 					<div className="profile">

@@ -59,11 +59,18 @@
 			position: absolute;
 			right: 250px;
 			font-size: 20px;
-			
+
+			.profile_adder {
+				position: relative;
+				margin-left: 100px;
+				left: 70px;
+			}
 
 			.added_items {
 				display: flex;
 				flex-direction: row;
+				margin-top: -30px;
+				position: relative;
 				.added_lastName {
 					margin-left: 10px;
 				}
