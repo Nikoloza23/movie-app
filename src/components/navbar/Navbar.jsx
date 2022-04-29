@@ -23,6 +23,7 @@ function Navbar() {
 		return () => (window.onscroll = null);
 	};
 
+	console.log(apiData);
 	return (
 		<div className={isScrolled ? 'navbar scrolled' : 'navbar'}>
 			<div className="container">
@@ -67,18 +68,17 @@ function Navbar() {
 								<PersonAddOutlined className="profile_adder" />
 							</NavLink>
 							<div className="added_list">
-								{apiData &&
-									apiData.slice(0, 1).map((res) => (
-										<div className="added_items" key={res.id}>
-											{res ? res.first_name : ''}
-											<div className="added_lastName">{res ? res.last_name : ''}</div>
-										</div>
-									))}
+								{apiData.slice(0,1).map((res) => (
+									<div className="added_items" key={res.id}>
+										{res ? res.first_name : ''}
+										<div className="added_lastName">{res ? res.last_name : ''}</div>
+									</div>
+								))}
 							</div>
 						</div>
 						<Notifications className="icon" style={{ color: 'white' }}></Notifications>
 						<div className="added_item" style={{ color: 'white' }}>
-							{state.validate.length}
+							{/* {state.cart.length} */}
 						</div>
 					</NavLink>
 					<div className="profile">

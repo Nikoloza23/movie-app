@@ -18,7 +18,7 @@ const Featured = ({ movie }) => {
 				<span className="desc">{movie.overview}</span>
 				<div className="buttons">
 					<Link to={`/detail/${movie.id}/movie`} style={{ textDecoration: 'none' }}>
-						<div className="play" >Watch Now</div>
+						<div className="play">Watch Now</div>
 					</Link>
 				</div>
 			</div>
