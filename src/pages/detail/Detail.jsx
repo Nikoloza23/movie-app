@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import { Autoplay } from 'swiper';
 
+import ReactStars from 'react-rating-stars-component';
+
 import { useDispatch } from 'react-redux';
 import { ADD_MOVIE } from '../../redux/action';
 
@@ -13,6 +15,7 @@ import axios from 'axios';
 
 import 'swiper/swiper.scss';
 import './detail.scss';
+import { DateRange } from '@material-ui/icons';
 //movie Details
 const Detail = () => {
 	const [data, setData] = useState([]);
@@ -20,8 +23,11 @@ const Detail = () => {
 	const [playTrailer, setPlayTrailer] = useState();
 	const [movieTrailer, setMovieTrailer] = useState();
 
+	const ganres = data.genres ? data.genres : [];
+
 	const { id } = useParams();
 	const { keyword } = useParams();
+
 	const url = `https://api.themoviedb.org/3/${keyword}/${id}?api_key=04c35731a5ee918f014970082a0088b1`;
 	const url2 = `https://api.themoviedb.org/3/${keyword}/${id}/credits?api_key=04c35731a5ee918f014970082a0088b1`;
 	const bg = `${`https://image.tmdb.org/t/p/w1280` + data.backdrop_path || data.poster_path}`;
@@ -43,6 +49,15 @@ const Detail = () => {
 	const dispatch = useDispatch();
 	const addMovie = (product) => {
 		dispatch(ADD_MOVIE(product));
+	};
+
+	const Ganres = (props) => {
+		const item = props.item;
+		return (
+			<div className="ganres">
+				<div className="ganres_name">{item.name}</div>
+			</div>
+		);
 	};
 
 	const Videos = (props) => {
@@ -173,6 +188,16 @@ const Detail = () => {
 						<div className="language">{data.original_language}</div>
 						<div className="language_2" onClick={() => addMovie(data)}>
 							Add To Favourite +
+						</div>
+					</div>
+					<div className="rated_stars">
+						<ReactStars count={data.rating} size={30} color={'#f4c10f'} />
+						<div className="genres_detail">
+							{ganres.map((el) => (
+								<div className="genres_map">
+									<Ganres item={el} key={el.id} />
+								</div>
+							))}
 						</div>
 					</div>
 					<p>{data.overview}</p>

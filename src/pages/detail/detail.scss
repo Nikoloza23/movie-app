@@ -3,6 +3,28 @@
 	z-index: -2;
 	overflow-x: hidden;
 
+	.rated_stars {
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+		top: 190px;
+	}
+
+	.genres_detail {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.ganres {
+		position: relative;
+		border: 1px solid #f60000;
+		border-radius: 30px;
+		padding: 5px 10px;
+		top: 220px;
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+	}
+
 	.movies_movie_grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -179,7 +201,7 @@
 			border-radius: 100px;
 			width: max-content;
 			margin-top: 40px;
-			margin-left: 580px;
+			margin-left: 550px;
 		}
 
 		&.play:hover {

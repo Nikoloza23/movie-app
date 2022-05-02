@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import ReactStars from 'react-rating-stars-component'
 import './featured.scss';
 
 //Backdrop with Swiper Animation
@@ -15,6 +15,7 @@ const Featured = ({ movie }) => {
 			)}
 			<div className="info">
 				<div className="movie_title">{movie.title}</div>
+				<ReactStars count={movie.rating}  size={40} color={'#f4c10f'}/>
 				<span className="desc">{movie.overview}</span>
 				<div className="buttons">
 					<Link to={`/detail/${movie.id}/movie`} style={{ textDecoration: 'none' }}>

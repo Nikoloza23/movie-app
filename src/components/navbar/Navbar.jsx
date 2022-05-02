@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
 
 import { Notifications, ArrowDropDown, PersonAddOutlined } from '@material-ui/icons';
+
+import axios from 'axios';
 
 import './navbar.scss';
 
@@ -68,7 +69,7 @@ function Navbar() {
 								<PersonAddOutlined className="profile_adder" />
 							</NavLink>
 							<div className="added_list">
-								{apiData.slice(0,1).map((res) => (
+								{apiData.slice(0, 1).map((res) => (
 									<div className="added_items" key={res.id}>
 										{res ? res.first_name : ''}
 										<div className="added_lastName">{res ? res.last_name : ''}</div>
