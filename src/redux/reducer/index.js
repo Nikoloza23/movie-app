@@ -1,6 +1,3 @@
-import axios from 'axios';
-import * as types from '../actiontypes';
-
 const initialState = {
 	cart: [],
 };

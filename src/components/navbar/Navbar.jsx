@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Notifications, ArrowDropDown } from '@material-ui/icons';
-
-import axios from 'axios';
 
 import './navbar.scss';
 
@@ -66,9 +64,9 @@ function Navbar() {
 						<ArrowDropDown className="icon" />
 
 						<div className="options">
-							<NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
+							<a href="https://github.com/Nikoloza23" style={{ textDecoration: 'none', color: 'white' }}>
 								<span>More</span>
-							</NavLink>
+							</a>
 						</div>
 					</div>
 				</div>
