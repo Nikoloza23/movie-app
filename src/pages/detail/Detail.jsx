@@ -15,7 +15,6 @@ import axios from 'axios';
 
 import 'swiper/swiper.scss';
 import './detail.scss';
-import { DateRange } from '@material-ui/icons';
 //movie Details
 const Detail = () => {
 	const [data, setData] = useState([]);

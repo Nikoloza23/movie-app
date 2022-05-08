@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router';
 
 import Home from './pages/home/Home';
-import Register from './pages/register/Register';
-import ThankPage from './pages/register/thankPage/ThankPage';
+
 import Detail from './pages/detail/Detail';
 import MovieList from './pages/detail/movies/MovieList';
 import Series from './pages/detail/tvSeries/Series';
@@ -16,8 +15,6 @@ function App() {
 		<div>
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/register" element={<Register />} />
-				<Route path="/thank" element={<ThankPage />} />
 				<Route path="/detail/:id/:keyword" element={<Detail />} />
 				<Route path="/movies" element={<MovieList />} />
 				<Route path="/tvseries" element={<Series />} />
