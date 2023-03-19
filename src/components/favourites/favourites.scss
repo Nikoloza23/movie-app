@@ -1,39 +1,40 @@
+@use "../../sass/mixin" as *;
+
 .favourites_container {
-	color: white;
-	background: var(--main-color);
+  color: white;
+  background: var(--main-color);
 
-	.favourites_list {
-		position: relative;
-		top: 100px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		border: 1px solid darkred;
-		margin-bottom: 20px;
-		background: var(--main-color);
-
-		background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMVG4QptSMHRmbDArOOvPkIB7ybIq20mxsmw&usqp=CAU');
-
-		.favourties_image {
-			width: 50%;
-			flex-direction: column;
-			display: flex;
-			flex-direction: row-reverse;
-			align-items: center;
-			justify-content: center;
-			background: var(--main-color);
-		}
-		.favourites_title {
-			background: darkred;
-			border-radius: 30px;
-		}
-	}
+  .favourites_list {
+    position: relative;
+    top: 100px;
+    @include flex(center, center);
+    flex-direction: column;
+    margin-bottom: 50px;
+    background: var(--main-color);
+    button {
+      position: absolute;
+      border: none;
+      background: none;
+      top: 10px;
+      left: 30%;
+    }
+    .favourties_image {
+      width: 50%;
+      border-radius: 30px;
+      flex-direction: row-reverse;
+      @include flex(center, center);
+      background: var(--main-color);
+    }
+    .favourites_title {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  }
 }
 
 .favourites {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	background: var(--main-color);
-	height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--main-color);
+  height: 100vh;
 }
